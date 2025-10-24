@@ -466,10 +466,6 @@ document.addEventListener('DOMContentLoaded', function() {
         animateOnScroll();
     }, 100);
     
-    // Welcome message
-    setTimeout(() => {
-        showNotification('Welcome to Worldxpat Events!', 'success');
-    }, 1000);
 });
 
 // Function to handle errors
