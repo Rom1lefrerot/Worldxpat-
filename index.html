@@ -75,11 +75,28 @@
         </div>
     </section>
 
+    <!-- Search Section -->
+    <section id="search-section">
+        <div class="container">
+            <div class="search-container">
+                <div class="search-input-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                    <input 
+                        type="text" 
+                        id="event-search" 
+                        placeholder="Search events by name, location, or theme..."
+                        autocomplete="off"
+                    />
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Main Content -->
     <main class="main">
         <div class="container">
             <div class="events-grid" id="eventsGrid">
-                <!-- Les événements seront chargés dynamiquement depuis events.json -->
+                <!-- Events will be loaded dynamically from event.json -->
             </div>
         </div>
     </main>

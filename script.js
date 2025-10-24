@@ -27,42 +27,51 @@ function renderEvents() {
 }
 
 function createEventCard(event) {
-    const eventCard = document.createElement('div');
-    eventCard.className = 'event-card';
-    eventCard.setAttribute('data-status', event.status);
-
-    eventCard.innerHTML = `
-        <div class="event-image">
-            <img src="${event.image}" alt="${event.imageAlt}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjMzMzMzMzIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTUwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiM2NjY2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkltYWdlIG5vdCBhdmFpbGFibGU8L3RleHQ+Cjwvc3ZnPg=='">
-            <div class="event-status ${event.status}">${event.status.charAt(0).toUpperCase() + event.status.slice(1)}</div>
-        </div>
-        <div class="event-content">
-            <div class="event-price">${event.price}</div>
-            <h3 class="event-title">${event.title}</h3>
-            <div class="event-theme">
-                <i class="${event.theme.icon}"></i>
+    // Create theme header if theme.text exists
+    const themeHeader = event.theme && event.theme.text ? `
+        <div class="theme-header">
+            <div class="theme-pill">
+                ${event.theme.icon ? `<i class="${event.theme.icon}"></i>` : ''}
                 <span>${event.theme.text}</span>
             </div>
-            <p class="event-description">${event.description}</p>
-            <div class="event-details">
-                <div class="event-date">
-                    <i class="fas fa-calendar"></i>
-                    <span>${event.date}</span>
-                </div>
-                <div class="event-location">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>${event.location}</span>
-                </div>
+        </div>
+    ` : '';
+
+    // Create event item wrapper
+    const eventItem = document.createElement('div');
+    eventItem.className = 'event-item';
+    
+    eventItem.innerHTML = `
+        ${themeHeader}
+        <div class="event-card" data-status="${event.status}">
+            <div class="event-image">
+                <img src="${event.image}" alt="${event.imageAlt}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjMzMzMzMzIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTUwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiM2NjY2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkltYWdlIG5vdCBhdmFpbGFibGU8L3RleHQ+Cjwvc3ZnPg=='">
+                <div class="event-status ${event.status}">${event.status.charAt(0).toUpperCase() + event.status.slice(1)}</div>
             </div>
-            <div class="event-actions">
-                <button class="whatsapp-btn" onclick="joinWhatsAppGroup('${event.whatsappGroup}')">
-                    <i class="fab fa-whatsapp"></i>
-                </button>
+            <div class="event-content">
+                <div class="event-price">${event.price}</div>
+                <h3 class="event-title">${event.title}</h3>
+                <p class="event-description">${event.description}</p>
+                <div class="event-details">
+                    <div class="event-date">
+                        <i class="fas fa-calendar"></i>
+                        <span>${event.date}</span>
+                    </div>
+                    <div class="event-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>${event.location}</span>
+                    </div>
+                </div>
+                <div class="event-actions">
+                    <button class="whatsapp-btn" onclick="joinWhatsAppGroup('${event.whatsappGroup}')">
+                        <i class="fab fa-whatsapp"></i>
+                    </button>
+                </div>
             </div>
         </div>
     `;
 
-    return eventCard;
+    return eventItem;
 }
 
 function animateEventCards() {
@@ -442,6 +451,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize filter functionality
     initFilters();
     
+    // Initialize search functionality
+    initSearch();
+    
     // Ajouter l'effet de scroll
     window.addEventListener('scroll', function() {
         animateOnScroll();
@@ -467,6 +479,85 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 100);
     
 });
+
+// Search functionality
+function initSearch() {
+    const searchInput = document.getElementById('event-search');
+    
+    if (!searchInput) {
+        console.warn('Search input not found');
+        return;
+    }
+    
+    // Real-time search on input
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase().trim();
+        filterEventsBySearch(searchTerm);
+    });
+    
+    // Clear search on Escape key
+    searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            this.value = '';
+            filterEventsBySearch('');
+        }
+    });
+}
+
+function filterEventsBySearch(searchTerm) {
+    const eventsGrid = document.getElementById('eventsGrid');
+    
+    if (!eventsGrid) {
+        console.warn('Events grid not found');
+        return;
+    }
+    
+    // If search is empty, show all events
+    if (!searchTerm) {
+        renderEvents();
+        return;
+    }
+    
+    // Filter events based on search term
+    const filteredEvents = eventsData.filter(event => {
+        const title = event.title ? event.title.toLowerCase() : '';
+        const location = event.location ? event.location.toLowerCase() : '';
+        const themeText = event.theme && event.theme.text ? event.theme.text.toLowerCase() : '';
+        
+        return title.includes(searchTerm) || 
+               location.includes(searchTerm) || 
+               themeText.includes(searchTerm);
+    });
+    
+    // Clear current events
+    eventsGrid.innerHTML = '';
+    
+    // Show filtered events or empty state
+    if (filteredEvents.length > 0) {
+        filteredEvents.forEach(event => {
+            const eventCard = createEventCard(event);
+            eventsGrid.appendChild(eventCard);
+        });
+        
+        // Animate the filtered cards
+        animateEventCards();
+    } else {
+        showSearchEmptyState();
+    }
+}
+
+function showSearchEmptyState() {
+    const eventsGrid = document.getElementById('eventsGrid');
+    
+    const emptyState = document.createElement('div');
+    emptyState.className = 'search-empty-state';
+    emptyState.innerHTML = `
+        <i class="fas fa-search"></i>
+        <p>No events match your search.</p>
+    `;
+    
+    eventsGrid.appendChild(emptyState);
+}
 
 // Function to handle errors
 window.addEventListener('error', function(e) {

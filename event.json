@@ -1,0 +1,55 @@
+{
+    "events": [
+      {
+        "id": 1,
+        "status": "upcoming",
+        "image": "foot.png",
+        "imageAlt": "Networking Evening",
+        "price": "€25",
+        "title": "OM vs PSG",
+        "theme": {
+          "icon": "fas fa-users",
+          "text": "sport"
+        },
+        "category": "sport",
+        "description": "Join us for an exceptional networking evening in an elegant setting. Meet international professionals, exchange experiences and expand your network.",
+        "date": "March 15, 2024",
+        "location": "Le Grand Café, Paris",
+        "whatsappGroup": "networking-march"
+      },
+      {
+        "id": 2,
+        "status": "upcoming",
+        "image": "foot.png",
+        "imageAlt": "Networking Evening",
+        "price": "€25",
+        "title": "OM vs PSG",
+        "theme": {
+          "icon": "fas fa-users",
+          "text": "sport"
+        },
+        "category": "",
+        "description": "Join us for an exceptional networking evening in an elegant setting. Meet international professionals, exchange experiences and expand your network.",
+        "date": "March 15, 2024",
+        "location": "Le Grand Café, Paris",
+        "whatsappGroup": "networking-march"
+      },
+      {
+        "id": 3,
+        "status": "upcoming",
+        "image": "foot.png",
+        "imageAlt": "Networking Evening",
+        "price": "€25",
+        "title": "OM vs PSG",
+        "theme": {
+          "icon": "fas fa-users",
+          "text": "Food"
+        },
+        "category": "",
+        "description": "Join us for an exceptional networking evening in an elegant setting. Meet international professionals, exchange experiences and expand your network.",
+        "date": "March 15, 2024",
+        "location": "Le Grand Café, Paris",
+        "whatsappGroup": "networking-march"
+      }
+    ]
+  }
