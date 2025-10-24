@@ -1,0 +1,36 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "status": "upcoming",
+      "image": "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      "imageAlt": "Networking Evening",
+      "price": "€25",
+      "title": "International Networking Evening",
+      "theme": {
+        "icon": "fas fa-users",
+        "text": "Networking & Business"
+      },
+      "description": "Join us for an exceptional networking evening in an elegant setting. Meet international professionals, exchange experiences and expand your network.",
+      "date": "March 15, 2024",
+      "location": "Le Grand Café, Paris",
+      "whatsappGroup": "networking-march"
+    },
+    {
+      "id": 2,
+      "status": "upcoming",
+      "image": "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      "imageAlt": "Networking Evening",
+      "price": "€25",
+      "title": "International Networking Evening",
+      "theme": {
+        "icon": "fas fa-users",
+        "text": "Networking & Business"
+      },
+      "description": "Join us for an exceptional networking evening in an elegant setting. Meet international professionals, exchange experiences and expand your network.",
+      "date": "March 15, 2024",
+      "location": "Le Grand Café, Paris",
+      "whatsappGroup": "networking-march"
+    }
+  ]
+}

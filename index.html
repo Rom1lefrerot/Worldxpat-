@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldXpat Events - Upcoming Events</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <!-- Brand Section -->
+            <div class="logo">
+                <div class="logo-content">
+                    <h1>WorldXpat Events</h1>
+                    <p>Discover the best expatriate events</p>
+                </div>
+            </div>
+            
+            <!-- Navigation Section -->
+            <nav class="nav">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">All Events</button>
+                    <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+                    <button class="filter-btn" data-filter="ongoing">Ongoing</button>
+                </div>
+            </nav>
+            
+            <!-- Actions Section -->
+            <div class="header-actions">
+                <a href="#events" class="browse-btn">Browse Events</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="hero-carousel">
+            <div class="carousel-slides">
+                <div class="carousel-slide active">
+                    <img src="image1.png" alt="Worldxpat Event 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="image2.png" alt="Worldxpat Event 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="image3.png" alt="Worldxpat Event 3">
+                </div>
+                <div class="carousel-slide">
+                    <img src="image4.png" alt="Worldxpat Event 4">
+                </div>
+            </div>
+            <div class="carousel-overlay">
+                <div class="carousel-content">
+                    <h1>Worldxpat presents</h1>
+                </div>
+            </div>
+            <div class="carousel-nav">
+                <button class="carousel-btn prev" onclick="changeSlide(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next" onclick="changeSlide(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <div class="events-grid" id="eventsGrid">
+                <!-- Les événements seront chargés dynamiquement depuis events.json -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Worldxpat Events</h4>
+                    <p>Your expatriate events platform</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>contact@worldxpatevents.com</p>
+                    <p>+33 6 76 67 02 16</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com/worldxpat_dubai" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Worldxpat Events. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
