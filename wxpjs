@@ -1,0 +1,1008 @@
+// ============================================
+// I18N + DONNÉES MOCK
+// ============================================
+
+const LANGUAGE_STORAGE_KEY = 'worldxpat_language';
+
+const translations = {
+  nav_logo: { en: 'WorldXpat', fr: 'WorldXpat' },
+  nav_find_group: { en: 'Find a group', fr: 'Trouver un groupe' },
+  nav_how_it_works: { en: 'How it works', fr: 'Comment ça marche' },
+  nav_about: { en: 'About', fr: 'À propos' },
+  nav_faq: { en: 'FAQ', fr: 'FAQ' },
+  nav_cta: { en: 'Join the community', fr: 'Rejoindre la communauté' },
+  nav_toggle_label: { en: 'Toggle menu', fr: 'Afficher ou masquer le menu' },
+  hero_title: {
+    en: 'Find your WhatsApp group in Dubai<br><span class="text-primary">in 30 seconds.</span>',
+    fr: 'Trouve ton groupe WhatsApp à Dubaï<br><span class="text-primary">en 30 secondes.</span>',
+  },
+  hero_subtitle: {
+    en: 'By nationality, by need, by interest.<br>WorldXpat connects expats to the right communities without wasting time.',
+    fr: 'Par nationalité, par besoin, par centre d’intérêt.<br>WorldXpat connecte les expatriés aux bonnes communautés, sans perdre de temps.',
+  },
+  hero_primary_cta: { en: 'Choose my nationality', fr: 'Choisir ma nationalité' },
+  hero_secondary_cta: { en: 'Discover WorldXpat groups', fr: 'Découvrir les groupes WorldXpat' },
+  founder_label: { en: 'WorldXpat Crew', fr: 'Équipe WorldXpat' },
+  founder_name: { en: 'Romain & the team', fr: 'Romain & la team' },
+  founder_quote: {
+    en: '“We create genuine connections, without useless bling.”',
+    fr: '« On crée des connexions vraies, sans bling-bling inutile. »',
+  },
+  founder_image_alt: {
+    en: 'WorldXpat founder portrait',
+    fr: 'Portrait de la fondatrice WorldXpat',
+  },
+  nationality_section_title: { en: '1. Where are you from?', fr: '1. De quel pays viens-tu ?' },
+  nationality_section_subtitle: {
+    en: 'Tap your flag and we’ll guide you to your community.',
+    fr: 'Clique sur ton drapeau et on t’emmène vers ta communauté.',
+  },
+  interest_section_title: { en: '2. What do you need?', fr: '2. Qu’est-ce que tu cherches ?' },
+  interest_section_subtitle: {
+    en: 'Pick your priority and explore the WhatsApp groups made for you.',
+    fr: 'Sélectionne ton besoin pour voir les groupes qui te correspondent.',
+  },
+  groups_section_title: { en: 'Suggested WhatsApp groups', fr: 'Groupes WhatsApp suggérés' },
+  groups_section_subtitle: {
+    en: 'Here’s a selection to kick-start your Dubai adventure.',
+    fr: 'Voici quelques groupes pour bien commencer ton aventure à Dubaï.',
+  },
+  groups_prompt_select: {
+    en: 'Choose your country and need to view the right groups.',
+    fr: 'Choisis ton pays et ton besoin pour découvrir les bons groupes.',
+  },
+  groups_empty_filtered: {
+    en: 'We don’t have a group for this combination yet, but it’s coming soon 😉 You can reset your filters or join the main WorldXpat group.',
+    fr: 'On n’a pas encore de groupe pour cette combinaison, mais ça arrive bientôt 😉 Tu peux réinitialiser les filtres ou rejoindre le groupe général WorldXpat.',
+  },
+  groups_reset_filters: { en: 'Reset filters', fr: 'Réinitialiser les filtres' },
+  how_section_title: { en: 'How does it work?', fr: 'Comment ça marche ?' },
+  how_section_subtitle: {
+    en: 'Three simple steps to find your community.',
+    fr: 'En 3 étapes, tu trouves ta communauté.',
+  },
+  step1_title: { en: 'Choose your nationality', fr: 'Choisis ta nationalité' },
+  step1_text: {
+    en: 'We highlight the communities that match you.',
+    fr: 'On te montre les communautés qui te ressemblent.',
+  },
+  step2_title: { en: 'Pick your need', fr: 'Choisis ton besoin' },
+  step2_text: {
+    en: 'Housing, friends, outings, business… you decide.',
+    fr: 'Colocation, amis, sorties, business… c’est toi qui décides.',
+  },
+  step3_title: { en: 'Join the WhatsApp group', fr: 'Rejoins le groupe WhatsApp' },
+  step3_text: {
+    en: 'One tap and you’re in the right community to get started.',
+    fr: 'En un clic, tu es dans le bon groupe pour bien commencer à Dubaï.',
+  },
+  about_section_title: { en: 'About WorldXpat', fr: 'À propos de WorldXpat' },
+  about_section_description: {
+    en: 'WorldXpat is a community created by expats, for expats.<br><br>Landing in Dubai is exciting… and sometimes overwhelming.<br><br>Our mission: help you meet the right people from day one.<br><br>Through WhatsApp groups, events and meetups, WorldXpat helps you feel at home faster.',
+    fr: 'WorldXpat est une communauté créée par des expatriés, pour les expatriés.<br><br>Arriver à Dubaï peut être excitant… mais aussi déroutant.<br><br>Notre mission : t’aider à rencontrer les bonnes personnes dès les premiers jours.<br><br>À travers des groupes WhatsApp, des événements et des rencontres, WorldXpat te donne les clés pour te sentir chez toi plus vite.',
+  },
+  highlight1_title: { en: 'Weekly meetups', fr: 'Rencontres hebdomadaires' },
+  highlight1_text: {
+    en: 'Curated gatherings to build real relationships.',
+    fr: 'Des événements réguliers pour créer du lien.',
+  },
+  highlight2_title: { en: 'Growing global community', fr: 'Communauté internationale en croissance' },
+  highlight2_text: {
+    en: 'Many nationalities already represented.',
+    fr: 'De nombreuses nationalités représentées.',
+  },
+  highlight3_title: { en: '100% authentic', fr: '100% authentique' },
+  highlight3_text: {
+    en: 'No fake promises, only meaningful support.',
+    fr: 'Pas de bling-bling inutile, juste du vrai.',
+  },
+  faq_section_title: { en: 'Frequently asked questions', fr: 'Questions fréquentes' },
+  faq_section_subtitle: {
+    en: 'Everything you need to know about WorldXpat.',
+    fr: 'Tout ce que tu veux savoir sur WorldXpat.',
+  },
+  faq_q1: { en: 'Are the groups free?', fr: 'Est-ce que les groupes sont gratuits ?' },
+  faq_a1: {
+    en: 'Yes, every WorldXpat group is free. Our goal is to connect expats—not to monetize the community.',
+    fr: 'Oui, tous les groupes WorldXpat sont 100% gratuits. Notre mission est de connecter les expatriés, pas de monétiser la communauté.',
+  },
+  faq_q2: { en: 'How do I join a WorldXpat event?', fr: 'Comment rejoindre un événement WorldXpat ?' },
+  faq_a2: {
+    en: 'Events are announced inside the official WorldXpat WhatsApp groups. Join the group for your nationality or need and you’ll get every update.',
+    fr: 'Les événements sont annoncés dans les groupes WhatsApp officiels WorldXpat. Rejoins le groupe correspondant à ta nationalité ou à ton besoin, et tu seras informé de tous les événements à venir.',
+  },
+  faq_q4: { en: 'Is WorldXpat only for Dubai?', fr: 'Est-ce réservé à Dubaï ?' },
+  faq_a4: {
+    en: 'For now we focus on Dubai, but expansion is on the roadmap. Want to launch WorldXpat in your city? Reach out.',
+    fr: 'Pour le moment, WorldXpat se concentre sur Dubaï. Mais on a de grands projets d’expansion ! Si tu es dans une autre ville et que tu veux créer une communauté WorldXpat, n’hésite pas à nous contacter.',
+  },
+  faq_q5: { en: 'How can I contribute to the community?', fr: 'Comment puis-je contribuer à la communauté ?' },
+  faq_a5: {
+    en: 'Be active in the groups, welcome newcomers, share your best tips. You can also host an event or launch a new group if a need isn’t covered yet.',
+    fr: 'La meilleure façon de contribuer, c’est d’être actif dans les groupes, d’aider les nouveaux arrivants et de partager tes bons plans. Tu peux aussi proposer d’organiser un événement ou de créer un nouveau groupe si tu identifies un besoin non couvert.',
+  },
+  faq_q6: { en: 'Are my details visible in the groups?', fr: 'Mes informations sont-elles visibles dans les groupes ?' },
+  faq_a6: {
+    en: 'WorldXpat runs through moderated WhatsApp groups. Only members of a group can see each other’s numbers, and spam or unsolicited messages are removed immediately.',
+    fr: 'WorldXpat fonctionne via des groupes WhatsApp modérés. Seuls les membres voient les numéros des autres, et tout spam ou message non sollicité est supprimé immédiatement.',
+  },
+  footer_tagline: {
+    en: 'Connecting expats in Dubai and beyond.',
+    fr: 'Connecter les expatriés à Dubaï et dans le monde.',
+  },
+  footer_bottom: {
+    en: '&copy; 2024 WorldXpat. All rights reserved.',
+    fr: '&copy; 2024 WorldXpat. Tous droits réservés.',
+  },
+  footer_instagram: { en: 'Instagram', fr: 'Instagram' },
+  footer_whatsapp: { en: 'WhatsApp Community', fr: 'Communauté WhatsApp' },
+  footer_email: { en: 'Email', fr: 'Email' },
+  footer_tiktok: { en: 'TikTok', fr: 'TikTok' },
+  interest_housing: { en: 'Housing & Flatshare', fr: 'Logement & Colocation' },
+  interest_newcomers: { en: 'Newcomers', fr: 'Nouveaux arrivants' },
+  interest_jobs: { en: 'Jobs & Opportunities', fr: 'Jobs & Opportunités' },
+  interest_events: { en: 'Outings & Events', fr: 'Sorties & événements' },
+  interest_marketplace: { en: 'Marketplace', fr: 'Marketplace' },
+  group_badge_official: { en: 'Official WorldXpat', fr: 'Officiel WorldXpat' },
+  group_badge_community: { en: 'Community', fr: 'Communautaire' },
+  group_members_label: { en: '👥 +{count} members', fr: '👥 +{count} membres' },
+  group_members_generic: { en: '👥 Active community', fr: '👥 Communauté active' },
+  group_join_button: { en: 'Join the group', fr: 'Rejoindre le groupe' },
+  group_join_placeholder: {
+    en: 'Coming soon: direct join link. You will be redirected to WhatsApp here.',
+    fr: 'Bientôt disponible : lien direct. Tu seras redirigé vers WhatsApp ici.',
+  },
+  nationality_fr: { en: 'France', fr: 'France' },
+  nationality_gb: { en: 'United Kingdom', fr: 'Royaume-Uni' },
+  nationality_ie: { en: 'Ireland', fr: 'Irlande' },
+  nationality_ma: { en: 'Morocco', fr: 'Maroc' },
+  nationality_dz: { en: 'Algeria', fr: 'Algérie' },
+  nationality_tn: { en: 'Tunisia', fr: 'Tunisie' },
+  nationality_be: { en: 'Belgium', fr: 'Belgique' },
+  nationality_ch: { en: 'Switzerland', fr: 'Suisse' },
+  nationality_es: { en: 'Spain', fr: 'Espagne' },
+  nationality_it: { en: 'Italy', fr: 'Italie' },
+  nationality_br: { en: 'Brazil', fr: 'Brésil' },
+  nationality_in: { en: 'India', fr: 'Inde' },
+  nationality_us: { en: 'United States', fr: 'États-Unis' },
+  group_fr_marketplace_name: {
+    en: 'French Marketplace – WorldXpat',
+    fr: 'Marketplace francophone – WorldXpat',
+  },
+  group_fr_marketplace_desc: {
+    en: 'Community marketplace: furniture, services and great deals among francophones.',
+    fr: 'Marketplace communautaire : meubles, services, bons plans entre francophones.',
+  },
+  group_fr_jobs_name: {
+    en: 'Francophone Jobs & Opportunities',
+    fr: 'Jobs & Opportunités – Francophones',
+  },
+  group_fr_jobs_desc: {
+    en: 'Job offers, freelance missions and business leads for the francophone community.',
+    fr: 'Offres d’emploi, missions freelance et opportunités business pour les francophones.',
+  },
+  group_fr_events_name: {
+    en: 'Francophone Outings & Events',
+    fr: 'Sorties & événements – Francophones',
+  },
+  group_fr_events_desc: {
+    en: 'Afterworks, dinners and curated events hosted by the community.',
+    fr: 'Afterworks, restos et événements exclusifs organisés par la communauté.',
+  },
+  group_fr_newcomers_name: {
+    en: 'Francophone Newcomers',
+    fr: 'Nouveaux arrivants francophones',
+  },
+  group_fr_newcomers_desc: {
+    en: 'Guidance for your first weeks in Dubai: paperwork, housing, daily life.',
+    fr: 'Accompagnement pour tes premiers jours à Dubaï : démarches, logement, quotidien.',
+  },
+  group_fr_housing_name: {
+    en: 'Francophone Housing & Flatshare',
+    fr: 'Logement & colocation – Francophones',
+  },
+  group_fr_housing_desc: {
+    en: 'Verified listings and flatshare opportunities between francophones.',
+    fr: 'Colocations vérifiées, logements entre francophones et bons plans immobiliers.',
+  },
+  group_gb_marketplace_name: {
+    en: 'UK Marketplace – WorldXpat',
+    fr: 'Marketplace UK – WorldXpat',
+  },
+  group_gb_marketplace_desc: {
+    en: 'Buy, sell and trade services with the British expat community.',
+    fr: 'Achète, vends et échange des services avec la communauté britannique.',
+  },
+  group_gb_jobs_name: {
+    en: 'UK Jobs & Opportunities',
+    fr: 'Jobs & Opportunités – Royaume-Uni',
+  },
+  group_gb_jobs_desc: {
+    en: 'Job offers, missions and business deals tailored to UK expats.',
+    fr: 'Offres d’emploi, missions et opportunités business pour les expatriés britanniques.',
+  },
+  group_gb_events_name: {
+    en: 'UK Events & Social',
+    fr: 'Sorties & événements – Royaume-Uni',
+  },
+  group_gb_events_desc: {
+    en: 'Afterworks, social gatherings and cultural moments for UK expats.',
+    fr: 'Afterworks, rencontres et moments culturels pour la communauté britannique.',
+  },
+  group_gb_newcomers_name: {
+    en: 'UK Newcomers',
+    fr: 'Nouveaux arrivants – Royaume-Uni',
+  },
+  group_gb_newcomers_desc: {
+    en: 'Step-by-step support for your move to Dubai.',
+    fr: 'Accompagnement étape par étape pour ton installation à Dubaï.',
+  },
+  group_gb_housing_name: {
+    en: 'UK Housing & Flatshare',
+    fr: 'Logement & colocation – Royaume-Uni',
+  },
+  group_gb_housing_desc: {
+    en: 'Curated housing and flatshare leads for UK newcomers.',
+    fr: 'Logements et colocations sélectionnés pour les expatriés britanniques.',
+  },
+  group_ie_marketplace_name: {
+    en: 'Irish Marketplace – Dubai',
+    fr: 'Marketplace irlandaise – Dubaï',
+  },
+  group_ie_marketplace_desc: {
+    en: 'Services, items and recommendations exchanged between Irish expats.',
+    fr: 'Services, objets et recommandations partagés entre Irlandais à Dubaï.',
+  },
+  group_ie_jobs_name: {
+    en: 'Irish Jobs & Opportunities',
+    fr: 'Jobs & Opportunités – Irlande',
+  },
+  group_ie_jobs_desc: {
+    en: 'Business leads and missions for the Irish community in Dubai.',
+    fr: 'Opportunités business et missions pour la communauté irlandaise à Dubaï.',
+  },
+  group_ie_events_name: {
+    en: 'Irish Events & Social',
+    fr: 'Sorties & rencontres – Irlande',
+  },
+  group_ie_events_desc: {
+    en: 'Meetups, nights out and cultural moments for Irish expats.',
+    fr: 'Rencontres, sorties et moments culturels pour les expatriés irlandais.',
+  },
+  group_ie_newcomers_name: {
+    en: 'Irish Newcomers',
+    fr: 'Nouveaux arrivants – Irlande',
+  },
+  group_ie_newcomers_desc: {
+    en: 'Community support to navigate paperwork, housing and daily life.',
+    fr: 'Entraide pour les démarches, le logement et le quotidien.',
+  },
+  group_ie_housing_name: {
+    en: 'Irish Housing & Flatshare',
+    fr: 'Logement & colocation – Irlande',
+  },
+  group_ie_housing_desc: {
+    en: 'Housing opportunities shared by Irish expats in Dubai.',
+    fr: 'Opportunités logement partagées par les Irlandais à Dubaï.',
+  },
+  group_ma_marketplace_name: {
+    en: 'Moroccan Marketplace – Dubai',
+    fr: 'Marketplace Marocains à Dubaï',
+  },
+  group_ma_marketplace_desc: {
+    en: 'Exchange goods, services and recommendations within the Moroccan community.',
+    fr: 'Échanges, services et recommandations entre Marocains à Dubaï.',
+  },
+  group_ma_jobs_name: {
+    en: 'Moroccan Jobs & Opportunities',
+    fr: 'Jobs & Opportunités – Maroc',
+  },
+  group_ma_jobs_desc: {
+    en: 'Business opportunities and job leads for Moroccan expats.',
+    fr: 'Opportunités business et offres d’emploi pour les Marocains.',
+  },
+  group_ma_events_name: {
+    en: 'Moroccan Events & Social',
+    fr: 'Sorties & événements – Maroc',
+  },
+  group_ma_events_desc: {
+    en: 'Community gatherings, cultural outings and friendly meetups.',
+    fr: 'Rencontres communautaires, sorties culturelles et moments conviviaux.',
+  },
+  group_ma_newcomers_name: {
+    en: 'Moroccan Newcomers',
+    fr: 'Nouveaux arrivants – Maroc',
+  },
+  group_ma_newcomers_desc: {
+    en: 'Guidance for Moroccans settling in Dubai, from paperwork to daily life.',
+    fr: 'Accompagnement des nouveaux arrivants marocains à Dubaï, démarches et quotidien.',
+  },
+  group_ma_housing_name: {
+    en: 'Moroccan Housing & Flatshare',
+    fr: 'Logement & colocation – Maroc',
+  },
+  group_ma_housing_desc: {
+    en: 'Find or share housing opportunities within the Moroccan community.',
+    fr: 'Trouve ou propose un logement au sein de la communauté marocaine.',
+  },
+};
+
+const nationalities = [
+  { id: 'FR', nameKey: 'nationality_fr', flag: '🇫🇷', groups: 8 },
+  { id: 'GB', nameKey: 'nationality_gb', flag: '🇬🇧', groups: 3 },
+  { id: 'IE', nameKey: 'nationality_ie', flag: '🇮🇪', groups: 2 },
+  { id: 'MA', nameKey: 'nationality_ma', flag: '🇲🇦', groups: 5 },
+];
+
+const interests = [
+  { id: 'housing', translationKey: 'interest_housing' },
+  { id: 'newcomers', translationKey: 'interest_newcomers' },
+  { id: 'jobs', translationKey: 'interest_jobs' },
+  { id: 'events', translationKey: 'interest_events' },
+  { id: 'marketplace', translationKey: 'interest_marketplace' },
+];
+
+const groupLinks = {
+  FR: {
+    marketplace: {
+      url: 'https://chat.whatsapp.com/IO0h68K5DjNIYh4RSPdzvs',
+      nameKey: 'group_fr_marketplace_name',
+      descriptionKey: 'group_fr_marketplace_desc',
+      flag: '🇫🇷',
+    },
+    jobs: {
+      url: 'https://chat.whatsapp.com/Iv20IjgYQLI0Lt30vcSCEP',
+      nameKey: 'group_fr_jobs_name',
+      descriptionKey: 'group_fr_jobs_desc',
+      flag: '🇫🇷',
+    },
+    events: {
+      url: 'https://chat.whatsapp.com/BiL3Sc0pAhB9u6Bd5yGpt8',
+      nameKey: 'group_fr_events_name',
+      descriptionKey: 'group_fr_events_desc',
+      flag: '🇫🇷',
+    },
+    newcomers: {
+      url: 'https://chat.whatsapp.com/Hb06NYnZcfs4C7Q5DDcebB',
+      nameKey: 'group_fr_newcomers_name',
+      descriptionKey: 'group_fr_newcomers_desc',
+      flag: '🇫🇷',
+    },
+    housing: {
+      url: 'https://chat.whatsapp.com/FZfoDvNNa0VDmJylQ7N2Hg',
+      nameKey: 'group_fr_housing_name',
+      descriptionKey: 'group_fr_housing_desc',
+      flag: '🇫🇷',
+    },
+  },
+  GB: {
+    marketplace: {
+      url: 'https://chat.whatsapp.com/Ii3d0jTLS1O3Dttsj8qc0c',
+      nameKey: 'group_gb_marketplace_name',
+      descriptionKey: 'group_gb_marketplace_desc',
+      flag: '🇬🇧',
+    },
+    jobs: {
+      url: 'https://chat.whatsapp.com/H7Ugu1f4AqrHTo3m6RepVQ',
+      nameKey: 'group_gb_jobs_name',
+      descriptionKey: 'group_gb_jobs_desc',
+      flag: '🇬🇧',
+    },
+    events: {
+      url: 'https://chat.whatsapp.com/LkEAT5AlWC8DUfXUHzp0n4',
+      nameKey: 'group_gb_events_name',
+      descriptionKey: 'group_gb_events_desc',
+      flag: '🇬🇧',
+    },
+    newcomers: {
+      url: 'https://chat.whatsapp.com/LAc5x9Bcp1RCoJe3EOQMZ4',
+      nameKey: 'group_gb_newcomers_name',
+      descriptionKey: 'group_gb_newcomers_desc',
+      flag: '🇬🇧',
+    },
+    housing: {
+      url: 'https://chat.whatsapp.com/HCdOcXqpBygK0hlAgzvzHH',
+      nameKey: 'group_gb_housing_name',
+      descriptionKey: 'group_gb_housing_desc',
+      flag: '🇬🇧',
+    },
+  },
+  IE: {
+    marketplace: {
+      url: 'https://chat.whatsapp.com/CM6h1ON97Yn8CwX4FuecHn',
+      nameKey: 'group_ie_marketplace_name',
+      descriptionKey: 'group_ie_marketplace_desc',
+      flag: '🇮🇪',
+    },
+    jobs: {
+      url: 'https://chat.whatsapp.com/GJt6RmlC7gIIQOnGhAzFHW',
+      nameKey: 'group_ie_jobs_name',
+      descriptionKey: 'group_ie_jobs_desc',
+      flag: '🇮🇪',
+    },
+    events: {
+      url: 'https://chat.whatsapp.com/Iu8eYqO4M01C5RR4B2uo3L',
+      nameKey: 'group_ie_events_name',
+      descriptionKey: 'group_ie_events_desc',
+      flag: '🇮🇪',
+    },
+    newcomers: {
+      url: 'https://chat.whatsapp.com/L88wbpdtOjmL8KCiVrJ3YF',
+      nameKey: 'group_ie_newcomers_name',
+      descriptionKey: 'group_ie_newcomers_desc',
+      flag: '🇮🇪',
+    },
+    housing: {
+      url: 'https://chat.whatsapp.com/IsjVupKjp6874QQ0LAIPvP',
+      nameKey: 'group_ie_housing_name',
+      descriptionKey: 'group_ie_housing_desc',
+      flag: '🇮🇪',
+    },
+  },
+  MA: {
+    marketplace: {
+      url: 'https://chat.whatsapp.com/GemY46AHbYc5c1b7dUckOv',
+      nameKey: 'group_ma_marketplace_name',
+      descriptionKey: 'group_ma_marketplace_desc',
+      flag: '🇲🇦',
+    },
+    jobs: {
+      url: 'https://chat.whatsapp.com/I03D8FdOYTz4D2cz2AobUY',
+      nameKey: 'group_ma_jobs_name',
+      descriptionKey: 'group_ma_jobs_desc',
+      flag: '🇲🇦',
+    },
+    events: {
+      url: 'https://chat.whatsapp.com/HsU2cvFUCytD0wsPbBLOXV',
+      nameKey: 'group_ma_events_name',
+      descriptionKey: 'group_ma_events_desc',
+      flag: '🇲🇦',
+    },
+    newcomers: {
+      url: 'https://chat.whatsapp.com/D3KoAr0CkGT56rMyKAUAls',
+      nameKey: 'group_ma_newcomers_name',
+      descriptionKey: 'group_ma_newcomers_desc',
+      flag: '🇲🇦',
+    },
+    housing: {
+      url: 'https://chat.whatsapp.com/CYlmNnnFll6AJNAjjoX09x',
+      nameKey: 'group_ma_housing_name',
+      descriptionKey: 'group_ma_housing_desc',
+      flag: '🇲🇦',
+    },
+  },
+};
+
+let currentLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY) || 'en';
+let selectedNationality = null;
+let selectedInterest = null;
+
+// ============================================
+// INITIALISATION
+// ============================================
+
+document.addEventListener('DOMContentLoaded', () => {
+  initHeader();
+  initNationalities();
+  initInterests();
+  initGroups();
+  initFAQ();
+  initMobileMenu();
+  initScrollAnimations();
+  initSmoothScroll();
+  initLanguageSwitcher();
+  initGroupsResetButton();
+  applyLanguage(currentLanguage);
+});
+
+// ============================================
+// HEADER SCROLL
+// ============================================
+
+function initHeader() {
+  const header = document.getElementById('header');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+}
+
+// ============================================
+// SMOOTH SCROLL
+// ============================================
+
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+      
+      e.preventDefault();
+      const target = document.querySelector(href);
+      
+      if (target) {
+        const headerHeight = 70;
+        const targetPosition = target.offsetTop - headerHeight;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+        
+        // Fermer le menu mobile si ouvert
+        closeMobileMenu();
+      }
+    });
+  });
+}
+
+// ============================================
+// NATIONALITÉS
+// ============================================
+
+function initNationalities() {
+  const grid = document.getElementById('nationalitiesGrid');
+  
+  nationalities.forEach(nat => {
+    const card = createNationalityCard(nat);
+    grid.appendChild(card);
+  });
+}
+
+function createNationalityCard(nat) {
+  const card = document.createElement('div');
+  card.className = 'nationality-card fade-in';
+  card.dataset.nationality = nat.id;
+
+  const flag = document.createElement('span');
+  flag.className = 'nationality-flag';
+  flag.textContent = nat.flag;
+
+  const name = document.createElement('div');
+  name.className = 'nationality-name';
+  name.dataset.i18n = nat.nameKey;
+  name.textContent = t(nat.nameKey);
+
+  card.appendChild(flag);
+  card.appendChild(name);
+  
+  card.addEventListener('click', () => {
+    selectNationality(nat.id);
+    // Scroll vers la section intérêts
+    setTimeout(() => {
+      const interestsSection = document.getElementById('interests');
+      if (interestsSection) {
+        const headerHeight = 70;
+        const targetPosition = interestsSection.offsetTop - headerHeight;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 300);
+  });
+  
+  return card;
+}
+
+function selectNationality(natId) {
+  selectedNationality = natId;
+  
+  // Mettre à jour l'UI
+  document.querySelectorAll('.nationality-card').forEach(card => {
+    card.classList.remove('selected');
+    if (card.dataset.nationality === natId) {
+      card.classList.add('selected');
+    }
+  });
+  
+  // Filtrer les groupes
+  filterGroups();
+}
+
+// ============================================
+// INTÉRÊTS
+// ============================================
+
+function initInterests() {
+  const list = document.getElementById('interestsList');
+  
+  interests.forEach(interest => {
+    const pill = createInterestPill(interest);
+    list.appendChild(pill);
+  });
+}
+
+function createInterestPill(interest) {
+  const pill = document.createElement('button');
+  pill.className = 'interest-pill';
+  pill.dataset.interest = interest.id;
+  pill.dataset.i18n = interest.translationKey;
+  pill.textContent = t(interest.translationKey);
+  
+  pill.addEventListener('click', () => {
+    selectInterest(interest.id);
+    // Scroll vers la section groupes
+    setTimeout(() => {
+      const groupsSection = document.getElementById('groups');
+      if (groupsSection) {
+        const headerHeight = 70;
+        const targetPosition = groupsSection.offsetTop - headerHeight;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 300);
+  });
+  
+  return pill;
+}
+
+function selectInterest(interestId) {
+  selectedInterest = interestId;
+  
+  // Mettre à jour l'UI
+  document.querySelectorAll('.interest-pill').forEach(pill => {
+    pill.classList.remove('selected');
+    if (pill.dataset.interest === interestId) {
+      pill.classList.add('selected');
+    }
+  });
+  
+  // Filtrer les groupes
+  filterGroups();
+}
+
+// ============================================
+// GROUPES
+// ============================================
+
+function initGroups() {
+  filterGroups();
+}
+
+function filterGroups() {
+  const grid = document.getElementById('groupsGrid');
+  const empty = document.getElementById('groupsEmpty');
+  const resetButton = document.getElementById('groupsResetButton');
+  const emptyMessage = document.getElementById('groupsEmptyMessage');
+
+  const hasAnyFilter = Boolean(selectedNationality || selectedInterest);
+  const hasCompleteFilter = Boolean(selectedNationality && selectedInterest);
+
+  const matchedGroups = [];
+
+  if (hasCompleteFilter) {
+    const countryLinks = groupLinks[selectedNationality];
+    const link = countryLinks?.[selectedInterest];
+
+    if (link) {
+      const groupName = link.nameKey ? t(link.nameKey) : link.name;
+      const groupDescription = link.descriptionKey ? t(link.descriptionKey) : link.description;
+
+      matchedGroups.push({
+        id: `${selectedNationality}-${selectedInterest}`,
+        name: groupName,
+        flag: link.flag,
+        nationality: selectedNationality,
+        interest: selectedInterest,
+        type: 'official',
+        members: 0,
+        description: groupDescription,
+        url: link.url,
+      });
+    }
+  }
+
+  grid.innerHTML = '';
+
+  if (!hasAnyFilter) {
+    showGroupsEmptyState(grid, empty, emptyMessage, resetButton, 'groups_prompt_select', false);
+    return;
+  }
+
+  if (!hasCompleteFilter) {
+    showGroupsEmptyState(grid, empty, emptyMessage, resetButton, 'groups_prompt_select', true);
+    return;
+  }
+
+  if (matchedGroups.length === 0) {
+    showGroupsEmptyState(grid, empty, emptyMessage, resetButton, 'groups_empty_filtered', true);
+    return;
+  }
+
+  grid.style.display = 'grid';
+  empty.style.display = 'none';
+  if (resetButton) {
+    resetButton.style.display = hasAnyFilter ? 'inline-flex' : 'none';
+  }
+
+  matchedGroups.forEach((group, index) => {
+    const card = createGroupCard(group);
+    card.classList.add('fade-in');
+    setTimeout(() => {
+      card.style.transitionDelay = `${index * 50}ms`;
+    }, 10);
+    grid.appendChild(card);
+  });
+
+  setTimeout(() => {
+    document.querySelectorAll('#groupsGrid .fade-in').forEach(el => {
+      el.classList.add('visible');
+    });
+  }, 100);
+}
+
+function showGroupsEmptyState(grid, empty, messageEl, resetButton, messageKey, showReset) {
+  if (!grid || !empty || !messageEl) return;
+  grid.style.display = 'none';
+  empty.style.display = 'block';
+  setDynamicText(messageEl, messageKey);
+  if (resetButton) {
+    resetButton.style.display = showReset ? 'inline-flex' : 'none';
+  }
+}
+
+function createGroupCard(group) {
+  const card = document.createElement('div');
+  card.className = 'group-card';
+
+  const badgeClass = group.type === 'official' ? 'official' : '';
+  const badgeText = group.type === 'official' ? t('group_badge_official') : t('group_badge_community');
+
+  const actionLabel = t('group_join_button');
+  const actionElement = group.url
+    ? `<a class="group-btn group-btn-link" href="${group.url}" target="_blank" rel="noopener">${actionLabel}</a>`
+    : `<button class="group-btn" onclick="handleJoinGroup(${group.id})">${actionLabel}</button>`;
+
+  const membersLabel = group.members
+    ? t('group_members_label').replace('{count}', group.members)
+    : t('group_members_generic');
+
+  card.innerHTML = `
+    <div class="group-header">
+      <span class="group-flag">${group.flag}</span>
+      <span class="group-badge ${badgeClass}">${badgeText}</span>
+    </div>
+    <h3 class="group-title">${group.name}</h3>
+    <p class="group-description">${group.description}</p>
+    <div class="group-footer">
+      <span class="group-members">${membersLabel}</span>
+      ${actionElement}
+    </div>
+  `;
+
+  return card;
+}
+
+// Exposer la fonction globalement pour les boutons
+window.handleJoinGroup = function(groupId) {
+  // Pour l'instant, juste un placeholder
+  alert(t('group_join_placeholder'));
+};
+
+// ============================================
+// FAQ
+// ============================================
+
+function initFAQ() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    
+    question.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      
+      // Fermer tous les autres
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('active');
+          otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        }
+      });
+      
+      // Toggle l'item actuel
+      if (isActive) {
+        item.classList.remove('active');
+        question.setAttribute('aria-expanded', 'false');
+      } else {
+        item.classList.add('active');
+        question.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+}
+
+// ============================================
+// MENU MOBILE
+// ============================================
+
+function initMobileMenu() {
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      links.classList.toggle('mobile-open');
+    });
+  }
+}
+
+function closeMobileMenu() {
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  
+  if (toggle && links) {
+    toggle.classList.remove('active');
+    links.classList.remove('mobile-open');
+  }
+}
+
+// ============================================
+// ANIMATIONS AU SCROLL
+// ============================================
+
+function initScrollAnimations() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+  
+  // Observer tous les éléments avec la classe fade-in
+  document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+  });
+  
+  // Ajouter fade-in aux cartes de nationalités après leur création
+  setTimeout(() => {
+    document.querySelectorAll('.nationality-card').forEach(card => {
+      observer.observe(card);
+    });
+  }, 100);
+}
+
+// ============================================
+// RÉINITIALISATION DES FILTRES
+// ============================================
+
+function resetFilters() {
+  selectedNationality = null;
+  selectedInterest = null;
+  
+  document.querySelectorAll('.nationality-card').forEach(card => {
+    card.classList.remove('selected');
+  });
+  
+  document.querySelectorAll('.interest-pill').forEach(pill => {
+    pill.classList.remove('selected');
+  });
+  
+  filterGroups();
+}
+
+// Exposer la fonction globalement pour le bouton de réinitialisation
+window.resetFilters = resetFilters;
+
+function initGroupsResetButton() {
+  const button = document.getElementById('groupsResetButton');
+  if (!button) return;
+
+  button.addEventListener('click', event => {
+    event.preventDefault();
+    resetFilters();
+    const target = document.getElementById('nationalities');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+}
+
+// ============================================
+// LANGUE
+// ============================================
+
+function initLanguageSwitcher() {
+  const switcher = document.getElementById('languageSwitch');
+  if (!switcher) return;
+
+  switcher.addEventListener('click', event => {
+    const button = event.target.closest('[data-language-option]');
+    if (!button) return;
+    const lang = button.dataset.languageOption;
+    if (lang && lang !== currentLanguage) {
+      applyLanguage(lang);
+    }
+  });
+
+  updateLanguageButtons();
+}
+
+function applyLanguage(lang) {
+  if (!['en', 'fr'].includes(lang)) {
+    lang = 'en';
+  }
+
+  currentLanguage = lang;
+  localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
+
+  updateLanguageButtons();
+  updateStaticText();
+  updateDynamicTexts();
+  updateInterestLabels();
+  filterGroups();
+}
+
+function updateLanguageButtons() {
+  document.querySelectorAll('[data-language-option]').forEach(button => {
+    const isActive = button.dataset.languageOption === currentLanguage;
+    button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+  });
+}
+
+function t(key) {
+  const entry = translations[key];
+  if (!entry) return '';
+  return entry[currentLanguage] ?? entry.en ?? '';
+}
+
+function updateStaticText() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    const value = t(key);
+    if (value) {
+      el.innerHTML = value;
+    }
+  });
+
+  document.querySelectorAll('[data-i18n-attr]').forEach(el => {
+    const mappings = el.dataset.i18nAttr.split(',');
+    mappings.forEach(mapping => {
+      const [attr, key] = mapping.split(':').map(part => part.trim());
+      if (!attr || !key) return;
+      const value = t(key);
+      if (value) {
+        el.setAttribute(attr, value);
+      }
+    });
+  });
+}
+
+function updateDynamicTexts() {
+  document.querySelectorAll('[data-dynamic-i18n]').forEach(el => {
+    const key = el.dataset.dynamicI18n;
+    if (key) {
+      el.textContent = t(key);
+    }
+  });
+}
+
+function updateInterestLabels() {
+  interests.forEach(interest => {
+    const pill = document.querySelector(`.interest-pill[data-interest="${interest.id}"]`);
+    if (pill) {
+      pill.textContent = t(interest.translationKey);
+    }
+  });
+}
+
+function setDynamicText(element, key) {
+  if (!element) return;
+  element.dataset.dynamicI18n = key;
+  element.textContent = t(key);
+}
+
