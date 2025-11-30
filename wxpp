@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WorldXpat - Trouve ton groupe WhatsApp à Dubaï en 30 secondes. Connecte-toi avec ta communauté d'expatriés.">
+  <title>WorldXpat - Trouve ton groupe WhatsApp à Dubaï</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header id="header" class="header">
+    <nav class="nav container">
+      <div class="nav-logo">
+        <a href="#hero" data-i18n="nav_logo">WorldXpat</a>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#nationalities" class="nav-link" data-i18n="nav_find_group">Find a group</a></li>
+        <li><a href="#how-it-works" class="nav-link" data-i18n="nav_how_it_works">How it works</a></li>
+        <li><a href="#about" class="nav-link" data-i18n="nav_about">About</a></li>
+        <li><a href="#faq" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
+        <li><a href="#groups" class="nav-link btn-nav-cta" data-i18n="nav_cta">Join the community</a></li>
+        <li id="languageSwitch" class="nav-link">
+          <div class="language-switcher">
+            <button type="button" class="language-option" data-language-option="en" aria-pressed="true">EN</button>
+            <button type="button" class="language-option" data-language-option="fr" aria-pressed="false">FR</button>
+          </div>
+        </li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" data-i18n-attr="aria-label:nav_toggle_label">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-background">
+      <div class="hero-gradient"></div>
+      <div class="hero-shape hero-shape-1"></div>
+      <div class="hero-shape hero-shape-2"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title hero-animate-fade-up" style="animation-delay: 120ms;" data-i18n="hero_title">
+            Find your WhatsApp group in Dubai<br>
+            <span class="text-primary">in 30 seconds.</span>
+          </h1>
+          <p class="hero-subtitle hero-animate-fade-up" style="animation-delay: 200ms;" data-i18n="hero_subtitle">
+            By nationality, by need, by interest.<br>
+            WorldXpat connects expats to the right communities without wasting time.
+          </p>
+          <div class="hero-cta hero-animate-fade-up" style="animation-delay: 300ms;">
+            <a href="#nationalities" class="btn btn-primary" data-i18n="hero_primary_cta">Choose my nationality</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-cards">
+            <div class="founder-card hero-animate-slide-in" style="animation-delay: 280ms;">
+              <div class="founder-image">
+                <img src="moi.png" alt="WorldXpat founder portrait" data-i18n-attr="alt:founder_image_alt" />
+              </div>
+              <div class="founder-info">
+                <p class="founder-label" data-i18n="founder_label">WorldXpat Crew</p>
+                <p class="founder-name" data-i18n="founder_name">Romain & the team</p>
+                <p class="founder-quote" data-i18n="founder_quote">“We create genuine connections, without useless bling.”</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Choix de nationalité -->
+  <section id="nationalities" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="nationality_section_title">1. Where are you from?</h2>
+        <p class="section-subtitle" data-i18n="nationality_section_subtitle">Tap your flag and we’ll guide you to your community.</p>
+      </div>
+      <div class="nationalities-grid" id="nationalitiesGrid">
+        <!-- Les cartes de nationalités seront générées par JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Choix du besoin -->
+  <section id="interests" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="interest_section_title">2. What do you need?</h2>
+        <p class="section-subtitle" data-i18n="interest_section_subtitle">Pick your priority and explore the WhatsApp groups made for you.</p>
+      </div>
+      <div class="interests-list" id="interestsList">
+        <!-- Les boutons d'intérêts seront générés par JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Groupes WhatsApp -->
+  <section id="groups" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="groups_section_title">Suggested WhatsApp groups</h2>
+        <p class="section-subtitle" data-i18n="groups_section_subtitle">Here’s a selection to kick-start your Dubai adventure.</p>
+      </div>
+      <div class="groups-grid" id="groupsGrid">
+        <!-- Les cartes de groupes seront générées et filtrées par JavaScript -->
+      </div>
+      <div class="groups-empty" id="groupsEmpty" style="display: none;">
+        <p id="groupsEmptyMessage" data-dynamic-i18n="groups_prompt_select">Choose your country and need to view the right groups.</p>
+        <a href="#nationalities" class="btn btn-secondary" id="groupsResetButton" data-i18n="groups_reset_filters" style="display: none;">Reset filters</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Comment ça marche -->
+  <section id="how-it-works" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="how_section_title">How does it work?</h2>
+        <p class="section-subtitle" data-i18n="how_section_subtitle">Three simple steps to find your community.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3 class="step-title" data-i18n="step1_title">Choose your nationality</h3>
+          <p class="step-text" data-i18n="step1_text">We highlight the communities that match you.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3 class="step-title" data-i18n="step2_title">Pick your need</h3>
+          <p class="step-text" data-i18n="step2_text">Housing, friends, outings, business… you decide.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3 class="step-title" data-i18n="step3_title">Join the WhatsApp group</h3>
+          <p class="step-text" data-i18n="step3_text">One tap and you’re in the right community to get started.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: À propos -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2 class="section-title" data-i18n="about_section_title">About WorldXpat</h2>
+          <p class="about-description" data-i18n="about_section_description">
+            WorldXpat is a community created by expats, for expats.<br><br>
+            Landing in Dubai is exciting… and sometimes overwhelming.<br><br>
+            Our mission: help you meet the right people from day one.<br><br>
+            Through WhatsApp groups, events and meetups, WorldXpat helps you feel at home faster.
+          </p>
+        </div>
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <div class="highlight-icon">👥</div>
+            <h3 class="highlight-title" data-i18n="highlight1_title">Weekly meetups</h3>
+            <p class="highlight-text" data-i18n="highlight1_text">Curated gatherings to build real relationships.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">🌍</div>
+            <h3 class="highlight-title" data-i18n="highlight2_title">Growing global community</h3>
+            <p class="highlight-text" data-i18n="highlight2_text">Many nationalities already represented.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">✨</div>
+            <h3 class="highlight-title" data-i18n="highlight3_title">100% authentic</h3>
+            <p class="highlight-text" data-i18n="highlight3_text">No fake promises, only meaningful support.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: FAQ -->
+  <section id="faq" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="faq_section_title">Frequently asked questions</h2>
+        <p class="section-subtitle" data-i18n="faq_section_subtitle">Everything you need to know about WorldXpat.</p>
+      </div>
+      <div class="faq-list" id="faqList">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-i18n="faq_q1">Are the groups free?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq_a1">Yes, every WorldXpat group is free. Our goal is to connect expats—not to monetize the community.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-i18n="faq_q2">How do I join a WorldXpat event?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq_a2">Events are announced inside the official WorldXpat WhatsApp groups. Join the group for your nationality or need and you’ll get every update.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-i18n="faq_q4">Is WorldXpat only for Dubai?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq_a4">For now we focus on Dubai, but expansion is on the roadmap. Want to launch WorldXpat in your city? Reach out.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-i18n="faq_q5">How can I contribute to the community?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq_a5">Be active in the groups, welcome newcomers, share your best tips. You can also host an event or launch a new group if a need isn’t covered yet.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-i18n="faq_q6">Are my details visible in the groups?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq_a6">WorldXpat runs through moderated WhatsApp groups. Only members of a group can see each other’s numbers, and spam or unsolicited messages are removed immediately.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3 class="footer-logo">WorldXpat</h3>
+          <p class="footer-tagline" data-i18n="footer_tagline">Connecting expats in Dubai and beyond.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://instagram.com/worldxpat_dubai" target="_blank" rel="noopener" class="footer-link" data-i18n="footer_instagram">Instagram</a>
+          <a href="#" class="footer-link" data-i18n="footer_whatsapp">WhatsApp Community</a>
+          <a href="https://www.tiktok.com/@worldXpat4" target="_blank" rel="noopener" class="footer-link" data-i18n="footer_tiktok">TikTok</a>
+          <a href="mailto:romain@worldxpat.com" class="footer-link" data-i18n="footer_email">Email</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer_bottom">&copy; 2024 WorldXpat. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
