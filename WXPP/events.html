@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Proposez et découvrez des événements pour votre communauté à Dubaï - WorldXpat">
+  <title>Événements - WorldXpat</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="events.css">
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header id="header" class="header">
+    <nav class="nav container">
+      <div class="nav-logo">
+        <a href="index.html" data-i18n="nav_logo">WorldXpat</a>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#nationalities" class="nav-link" data-i18n="nav_find_group">Find a group</a></li>
+        <li><a href="partners.html" class="nav-link">Services</a></li>
+        <li><a href="colocation.html" class="nav-link" data-i18n="nav_colocation">Colocation</a></li>
+        <li><a href="events.html" class="nav-link active" data-i18n="nav_events">Événements</a></li>
+        <li><a href="index.html#groups" class="nav-link btn-nav-cta" data-i18n="nav_cta">Join the community</a></li>
+        <li id="languageSwitch" class="nav-link">
+          <div class="language-switcher">
+            <button type="button" class="language-option" data-language-option="en" aria-pressed="true">EN</button>
+            <button type="button" class="language-option" data-language-option="fr" aria-pressed="false">FR</button>
+          </div>
+        </li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" data-i18n-attr="aria-label:nav_toggle_label">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Events Hero Section -->
+  <section class="events-hero-section">
+    <div class="container">
+      <h1 class="events-hero-title" data-i18n="events_hero_title">Événements by WorldXpat</h1>
+      <p class="events-hero-subtitle" data-i18n="events_hero_subtitle">Découvrez et proposez des soirées pour votre communauté à Dubaï</p>
+    </div>
+  </section>
+
+  <!-- Nationality Selector -->
+  <section class="events-filter-section">
+    <div class="container">
+      <div class="events-filter-container">
+        <label for="nationalitySelect" class="events-filter-label" data-i18n="events_select_nationality">Sélectionnez votre nationalité</label>
+        <select id="nationalitySelect" class="events-nationality-select">
+          <option value="" data-i18n="events_all_nationalities">Toutes les nationalités</option>
+          <option value="FR">🇫🇷 Francophones</option>
+          <option value="GB">🇬🇧 British</option>
+          <option value="IE">🇮🇪 Irish</option>
+          <option value="MA">🇲🇦 Moroccan</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events List -->
+  <section class="events-list-section">
+    <div class="container">
+      <div id="eventsContainer" class="events-container-grid">
+        <!-- Les événements seront affichés ici par JavaScript -->
+      </div>
+      <div id="eventsEmpty" class="events-empty-state" style="display: none;">
+        <p data-i18n="events_empty">Aucun événement disponible pour cette nationalité pour le moment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3 class="footer-logo">WorldXpat</h3>
+          <p class="footer-tagline" data-i18n="footer_tagline">Connecting expats in Dubai and beyond.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://instagram.com/worldxpat_dubai" target="_blank" rel="noopener" class="footer-link" data-i18n="footer_instagram">Instagram</a>
+          <a href="#" class="footer-link" data-i18n="footer_whatsapp">WhatsApp Community</a>
+          <a href="https://www.tiktok.com/@worldXpat4" target="_blank" rel="noopener" class="footer-link" data-i18n="footer_tiktok">TikTok</a>
+          <a href="mailto:romain@worldxpat.com" class="footer-link" data-i18n="footer_email">Email</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer_bottom">&copy; 2024 WorldXpat. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="events.js"></script>
+</body>
+</html>
+

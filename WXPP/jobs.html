@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WorldXpat Jobs - Premium job opportunities in Dubai for expats. Companies publish. We deliver talent.">
+  <title>WorldXpat Jobs - Dubai Job Opportunities for Expats</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Force styles for job filters to ensure they work in production */
+    .jobs-filters {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 1.5rem !important;
+      margin-bottom: 4rem !important;
+      padding: 3rem !important;
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+      border-radius: 2rem !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+      border: 1px solid rgba(226, 232, 240, 0.8) !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+    .jobs-filters::before {
+      content: '' !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      height: 3px !important;
+      background: linear-gradient(90deg, #2563eb, #3b82f6, #2563eb) !important;
+      border-radius: 2rem 2rem 0 0 !important;
+    }
+    .jobs-filter {
+      padding: 0.875rem 1.25rem 0.875rem 1.25rem !important;
+      padding-right: 2.75rem !important;
+      border: 2px solid #e5e7eb !important;
+      border-radius: 1rem !important;
+      font-size: 0.9375rem !important;
+      font-weight: 500 !important;
+      background: #ffffff !important;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+      background-repeat: no-repeat !important;
+      background-position: right 1rem center !important;
+      background-size: 12px !important;
+      color: #111827 !important;
+      cursor: pointer !important;
+      appearance: none !important;
+      -webkit-appearance: none !important;
+      -moz-appearance: none !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+      min-width: 220px !important;
+      flex: 1 !important;
+      transition: all 0.3s ease !important;
+    }
+    .jobs-filter:hover {
+      border-color: #3b82f6 !important;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04) !important;
+      transform: translateY(-1px) !important;
+      background-color: #fafbfc !important;
+    }
+    .jobs-filter:focus {
+      outline: none !important;
+      border-color: #2563eb !important;
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12), 0 4px 16px rgba(37, 99, 235, 0.15) !important;
+      transform: translateY(-2px) !important;
+      background-color: #ffffff !important;
+    }
+    @media (max-width: 768px) {
+      .jobs-filters {
+        flex-direction: column !important;
+        padding: 1.5rem !important;
+        gap: 1rem !important;
+      }
+      .jobs-filter {
+        width: 100% !important;
+        min-width: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header id="header" class="header">
+    <nav class="nav container">
+      <div class="nav-logo">
+        <a href="index.html" data-i18n="nav_logo">WorldXpat</a>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#nationalities" class="nav-link" data-i18n="nav_find_group">Find a group</a></li>
+        <li><a href="partners.html" class="nav-link">Services</a></li>
+        <li><a href="colocation.html" class="nav-link" data-i18n="nav_colocation">Colocation</a></li>
+        <!-- Jobs temporarily hidden from navbar on this page as well
+        <li><a href="jobs.html" class="nav-link active" data-i18n="jobs_nav">Jobs</a></li>
+        -->
+        <li><a href="index.html#groups" class="nav-link btn-nav-cta" data-i18n="nav_cta">Join the community</a></li>
+        <li id="languageSwitch" class="nav-link">
+          <div class="language-switcher">
+            <button type="button" class="language-option" data-language-option="en" aria-pressed="true">EN</button>
+            <button type="button" class="language-option" data-language-option="fr" aria-pressed="false">FR</button>
+          </div>
+        </li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" data-i18n-attr="aria-label:nav_toggle_label">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Jobs Hero Section -->
+  <section id="jobs-hero" class="jobs-hero">
+    <div class="container">
+      <div class="jobs-hero-content">
+        <h1 class="jobs-hero-title" data-i18n="jobs_hero_title">Dubai Job Opportunities for Expats</h1>
+        <p class="jobs-hero-subtitle" data-i18n="jobs_hero_subtitle">Les entreprises recrutent. WorldXpat filtre les meilleurs talents.</p>
+        <button class="btn btn-hero-cta" id="contact-company-btn" data-i18n="jobs_hero_company_button">Vous êtes une entreprise ? Contactez-nous</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jobs Section -->
+  <section id="jobs" class="section" style="padding-top: var(--spacing-3xl); margin-top: 0;">
+    <div class="container">
+      <!-- Filters -->
+      <div class="jobs-filters">
+        <select id="filterCategory" class="jobs-filter">
+          <option value="" data-i18n="jobs_filter_all_categories">All Categories</option>
+          <option value="hospitality_restaurants" data-i18n="jobs_category_hospitality">Hospitality & Restaurants</option>
+          <option value="sales_retail" data-i18n="jobs_category_sales">Sales & Retail</option>
+          <option value="real_estate" data-i18n="jobs_category_real_estate">Real Estate</option>
+          <option value="customer_service_call_center" data-i18n="jobs_category_customer_service">Customer Service / Call Center</option>
+          <option value="administration_office" data-i18n="jobs_category_administration">Administration / Office</option>
+          <option value="marketing_social_media_content" data-i18n="jobs_category_marketing">Marketing / Social Media / Content</option>
+          <option value="driver_delivery" data-i18n="jobs_category_driver">Driver / Delivery</option>
+          <option value="it_web_tech" data-i18n="jobs_category_it">IT / Web / Tech</option>
+          <option value="kids_education_babysitting" data-i18n="jobs_category_kids">Kids / Education / Babysitting</option>
+          <option value="beauty_fitness_wellness" data-i18n="jobs_category_beauty">Beauty / Fitness / Wellness</option>
+          <option value="construction_engineering" data-i18n="jobs_category_construction">Construction / Engineering</option>
+        </select>
+        <select id="filterLocation" class="jobs-filter">
+          <option value="" data-i18n="jobs_filter_all_locations">All Locations</option>
+          <option value="dubai" data-i18n="jobs_location_dubai">Dubai</option>
+          <option value="sharjah" data-i18n="jobs_location_sharjah">Sharjah</option>
+          <option value="remote" data-i18n="jobs_location_remote">Remote</option>
+        </select>
+        <select id="filterExperience" class="jobs-filter">
+          <option value="" data-i18n="jobs_filter_all_levels">All Levels</option>
+          <option value="Entry level" data-i18n="jobs_experience_entry">Entry level</option>
+          <option value="Mid level (2-5 years)" data-i18n="jobs_experience_mid">Mid level (2-5 years)</option>
+          <option value="Senior (5+ years)" data-i18n="jobs_experience_senior">Senior (5+ years)</option>
+        </select>
+      </div>
+
+      <!-- Job Submission Status Message -->
+      <div id="job-submission-status" style="display: none;"></div>
+
+      <!-- Jobs Container -->
+      <div class="jobs-grid" id="jobs-container">
+        <!-- Job cards will be generated by JavaScript -->
+      </div>
+
+      <!-- Empty State -->
+      <div class="jobs-empty" id="jobs-empty" style="display: none;">
+        <p>No job offers available at the moment. Come back soon!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal: Post Job Form -->
+  <div class="modal" id="postJobModal" style="display: none;">
+    <div class="modal-content modal-premium">
+      <div class="modal-header">
+        <h2 id="modalTitle" data-i18n="jobs_modal_title">Post a Job Offer</h2>
+        <button class="modal-close" id="closeModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <!-- Offer Form -->
+        <form id="offerForm" class="job-form">
+          <div class="form-group">
+            <label data-i18n="jobs_form_company">Company Name *</label>
+            <input type="text" id="offerCompany" required>
+          </div>
+          <div class="form-group">
+            <label data-i18n="jobs_form_title">Job Title *</label>
+            <input type="text" id="offerTitle" required>
+          </div>
+          <div class="form-group">
+            <label data-i18n="jobs_form_description">Job Description *</label>
+            <textarea id="offerDescription" rows="6" required maxlength="2000"></textarea>
+          </div>
+          <div class="form-group">
+            <label data-i18n="jobs_form_salary">Salary</label>
+            <input type="text" id="offerSalary" data-i18n-placeholder="jobs_form_salary_placeholder" placeholder="e.g., 5000-7000 AED or Negotiable">
+          </div>
+          <div class="form-group">
+            <label data-i18n="jobs_form_whatsapp">WhatsApp Contact *</label>
+            <input type="text" id="offerWhatsApp" required data-i18n-placeholder="jobs_form_whatsapp_placeholder" placeholder="+971501234567">
+          </div>
+          <div class="form-group">
+            <label data-i18n="jobs_form_category">Category *</label>
+            <select id="offerCategory" required>
+              <option value="" data-i18n="jobs_form_category_select">Select a category</option>
+              <option value="hospitality_restaurants" data-i18n="jobs_category_hospitality">Hospitality & Restaurants</option>
+              <option value="sales_retail" data-i18n="jobs_category_sales">Sales & Retail</option>
+              <option value="real_estate" data-i18n="jobs_category_real_estate">Real Estate</option>
+              <option value="customer_service_call_center" data-i18n="jobs_category_customer_service">Customer Service / Call Center</option>
+              <option value="administration_office" data-i18n="jobs_category_administration">Administration / Office</option>
+              <option value="marketing_social_media_content" data-i18n="jobs_category_marketing">Marketing / Social Media / Content</option>
+              <option value="driver_delivery" data-i18n="jobs_category_driver">Driver / Delivery</option>
+              <option value="it_web_tech" data-i18n="jobs_category_it">IT / Web / Tech</option>
+              <option value="kids_education_babysitting" data-i18n="jobs_category_kids">Kids / Education / Babysitting</option>
+              <option value="beauty_fitness_wellness" data-i18n="jobs_category_beauty">Beauty / Fitness / Wellness</option>
+              <option value="construction_engineering" data-i18n="jobs_category_construction">Construction / Engineering</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label data-i18n="jobs_form_contract">Contract Type *</label>
+            <select id="offerContract" required>
+              <option value="" data-i18n="jobs_form_contract_select">Select</option>
+              <option value="Full-Time" data-i18n="jobs_form_contract_fulltime">Full-Time</option>
+              <option value="Part-time" data-i18n="jobs_form_contract_parttime">Part-time</option>
+              <option value="Contract" data-i18n="jobs_form_contract_contract">Contract</option>
+              <option value="Freelance" data-i18n="jobs_form_contract_freelance">Freelance</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label data-i18n="jobs_form_location">Location *</label>
+            <select id="offerLocation" name="location" required class="form-input w-full rounded-xl px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+              <option value="" disabled selected data-i18n="jobs_form_location_select">Select a location</option>
+              <option value="dubai" data-i18n="jobs_location_dubai">Dubai</option>
+              <option value="sharjah" data-i18n="jobs_location_sharjah">Sharjah</option>
+              <option value="remote" data-i18n="jobs_location_remote">Remote</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label data-i18n="jobs_form_level">Level *</label>
+            <select id="offerLevel" required>
+              <option value="" disabled selected data-i18n="jobs_form_level_select">Select level</option>
+              <option value="Entry level" data-i18n="jobs_experience_entry">Entry level</option>
+              <option value="Mid level (2-5 years)" data-i18n="jobs_experience_mid">Mid level (2-5 years)</option>
+              <option value="Senior (5+ years)" data-i18n="jobs_experience_senior">Senior (5+ years)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label data-i18n="jobs_form_experience">Experience Required (optional)</label>
+            <select id="offerExperience">
+              <option value="" data-i18n="jobs_form_experience_select">Select</option>
+              <option value="Entry level" data-i18n="jobs_experience_entry">Entry level</option>
+              <option value="Mid level (2-5 years)" data-i18n="jobs_experience_mid">Mid level (2-5 years)</option>
+              <option value="Senior (5+ years)" data-i18n="jobs_experience_senior">Senior (5+ years)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label data-i18n="jobs_form_benefits">Benefits (visa, accommodation, insurance...)</label>
+            <textarea id="offerBenefits" rows="3" maxlength="500"></textarea>
+          </div>
+          <div class="form-group">
+            <label data-i18n="jobs_form_availability">Availability *</label>
+            <select id="offerAvailability" required>
+              <option value="" disabled selected data-i18n="jobs_form_availability_select">Select availability</option>
+              <option value="Immediate" data-i18n="jobs_availability_immediate">Immediate</option>
+              <option value="Within 1 week" data-i18n="jobs_availability_1week">Within 1 week</option>
+              <option value="Within 2 weeks" data-i18n="jobs_availability_2weeks">Within 2 weeks</option>
+              <option value="Within 1 month" data-i18n="jobs_availability_1month">Within 1 month</option>
+              <option value="Within 2 months" data-i18n="jobs_availability_2months">Within 2 months</option>
+              <option value="Flexible" data-i18n="jobs_availability_flexible">Flexible</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label data-i18n="jobs_form_email">Email (optional)</label>
+            <input type="email" id="offerEmail">
+          </div>
+          <button type="submit" class="btn btn-primary btn-premium" data-i18n="jobs_form_submit">Publish Job Offer</button>
+          <div id="job-offer-status"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Company Job Offer Form -->
+  <div class="modal" id="companyJobModal" style="display: none;">
+    <div class="modal-content modal-premium">
+      <div class="modal-header">
+        <h2 data-i18n="company_form_title">Publier une offre d'emploi</h2>
+        <button class="modal-close" id="closeCompanyModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <!-- ⬅️ TO MODIFY FORM FIELDS: Add or remove form-group divs below -->
+        <form id="companyJobForm" class="job-form">
+          <!-- Error/Success message container -->
+          <div id="companyFormMessage" style="display: none; margin-bottom: 1rem; padding: 1rem; border-radius: 8px;"></div>
+          
+          <!-- Simplified form with 6 fields only -->
+          <div class="form-group">
+            <label data-i18n="company_form_company_name">Nom de l'entreprise *</label>
+            <input type="text" id="companyName" required data-i18n-placeholder="company_form_company_name_placeholder" placeholder="Nom de votre entreprise">
+          </div>
+          
+          <div class="form-group">
+            <label data-i18n="company_form_contact_person">Nom de la personne de contact *</label>
+            <input type="text" id="contactPerson" required data-i18n-placeholder="company_form_contact_person_placeholder" placeholder="Votre nom">
+          </div>
+          
+          <div class="form-group">
+            <label data-i18n="company_form_contact_info">Email ou WhatsApp *</label>
+            <input type="text" id="contactInfo" required data-i18n-placeholder="company_form_contact_info_placeholder" placeholder="votre@email.com ou +971501234567">
+            <small style="color: #6b7280; font-size: 0.875rem; display: block; margin-top: 0.25rem;" data-i18n="company_form_contact_info_hint">Indiquez votre email ou votre numéro WhatsApp</small>
+          </div>
+          
+          <div class="form-group">
+            <label data-i18n="company_form_job_title">Titre du poste *</label>
+            <input type="text" id="jobTitle" required data-i18n-placeholder="company_form_job_title_placeholder" placeholder="Ex: Sales Manager">
+          </div>
+          
+          <div class="form-group">
+            <label data-i18n="company_form_job_description">Description du poste *</label>
+            <textarea id="jobDescription" rows="6" required data-i18n-placeholder="company_form_job_description_placeholder" placeholder="Décrivez le poste, les responsabilités, les exigences..."></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label data-i18n="company_form_category">Category *</label>
+            <select id="companyCategory" required>
+              <option value="" disabled selected data-i18n="jobs_form_category_select">Select a category</option>
+              <option value="hospitality_restaurants" data-i18n="jobs_category_hospitality">Hospitality & Restaurants</option>
+              <option value="sales_retail" data-i18n="jobs_category_sales">Sales & Retail</option>
+              <option value="real_estate" data-i18n="jobs_category_real_estate">Real Estate</option>
+              <option value="customer_service_call_center" data-i18n="jobs_category_customer_service">Customer Service / Call Center</option>
+              <option value="administration_office" data-i18n="jobs_category_administration">Administration / Office</option>
+              <option value="marketing_social_media_content" data-i18n="jobs_category_marketing">Marketing / Social Media / Content</option>
+              <option value="driver_delivery" data-i18n="jobs_category_driver">Driver / Delivery</option>
+              <option value="it_web_tech" data-i18n="jobs_category_it">IT / Web / Tech</option>
+              <option value="kids_education_babysitting" data-i18n="jobs_category_kids">Kids / Education / Babysitting</option>
+              <option value="beauty_fitness_wellness" data-i18n="jobs_category_beauty">Beauty / Fitness / Wellness</option>
+              <option value="construction_engineering" data-i18n="jobs_category_construction">Construction / Engineering</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label data-i18n="company_form_location">Location *</label>
+            <select id="companyLocation" required>
+              <option value="" disabled selected data-i18n="jobs_form_location_select">Select a location</option>
+              <option value="dubai" data-i18n="jobs_location_dubai">Dubai</option>
+              <option value="sharjah" data-i18n="jobs_location_sharjah">Sharjah</option>
+              <option value="remote" data-i18n="jobs_location_remote">Remote</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label data-i18n="company_form_level">Level *</label>
+            <select id="companyLevel" required>
+              <option value="" disabled selected data-i18n="jobs_form_level_select">Select level</option>
+              <option value="Entry level" data-i18n="jobs_experience_entry">Entry level</option>
+              <option value="Mid level (2-5 years)" data-i18n="jobs_experience_mid">Mid level (2-5 years)</option>
+              <option value="Senior (5+ years)" data-i18n="jobs_experience_senior">Senior (5+ years)</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label data-i18n="company_form_availability">Disponibilité</label>
+            <select id="availability">
+              <option value="" disabled selected data-i18n="jobs_form_availability_select">Select availability</option>
+              <option value="Immediate" data-i18n="jobs_availability_immediate">Immediate</option>
+              <option value="Within 1 week" data-i18n="jobs_availability_1week">Within 1 week</option>
+              <option value="Within 2 weeks" data-i18n="jobs_availability_2weeks">Within 2 weeks</option>
+              <option value="Within 1 month" data-i18n="jobs_availability_1month">Within 1 month</option>
+              <option value="Within 2 months" data-i18n="jobs_availability_2months">Within 2 months</option>
+              <option value="Flexible" data-i18n="jobs_availability_flexible">Flexible</option>
+            </select>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-premium" data-i18n="company_form_submit">Envoyer l'offre</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Job Details -->
+  <div class="modal" id="jobDetailsModal" style="display: none;">
+    <div class="modal-content modal-large modal-premium">
+      <div class="modal-header">
+        <h2 id="jobDetailsTitle"></h2>
+        <button class="modal-close" id="closeDetailsModal">&times;</button>
+      </div>
+      <div class="modal-body" id="jobDetailsContent">
+        <!-- Job details will be populated by JavaScript -->
+      </div>
+      <div class="modal-footer" id="jobDetailsFooter" style="display: none;">
+        <!-- Bouton "Postuler maintenant" - sera géré par JavaScript -->
+        <div id="applyNowSection" class="apply-now-section" style="display: none;">
+          <button id="applyNowBtn" class="btn btn-apply-now" aria-label="Postuler à cette offre" data-i18n="application_form_submit">
+            Postuler maintenant
+          </button>
+          <p id="applyNowMessage" class="apply-now-message" style="display: none;" data-i18n="application_form_no_link">
+            Aucun lien de candidature disponible pour cette offre pour le moment.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3 class="footer-logo">WorldXpat</h3>
+          <p class="footer-tagline" data-i18n="footer_tagline">Connecting expats in Dubai and beyond.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://instagram.com/worldxpat_dubai" target="_blank" rel="noopener" class="footer-link" data-i18n="footer_instagram">Instagram</a>
+          <a href="#" class="footer-link" data-i18n="footer_whatsapp">WhatsApp Community</a>
+          <a href="https://www.tiktok.com/@worldXpat4" target="_blank" rel="noopener" class="footer-link" data-i18n="footer_tiktok">TikTok</a>
+          <a href="mailto:romain@worldxpat.com" class="footer-link" data-i18n="footer_email">Email</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer_bottom">&copy; 2024 WorldXpat. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = 'https://qkqdbxerbaskmgarxwak.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFrcWRieGVyYmFza21nYXJ4d2FrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUwMjc5NzEsImV4cCI6MjA4MDYwMzk3MX0.1eC8ZmlH7f0vPr5q_V8BNKRNnueLLhnD0RjQTG2klhU';
+    // IMPORTANT: Assign to window.supabaseClient so it's accessible globally in jobs.js
+    window.supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    console.log('Supabase URL:', SUPABASE_URL);
+    console.log('Supabase client initialized:', !!window.supabaseClient);
+  </script>
+  <script src="script.js"></script>
+  <script src="jobs.js"></script>
+</body>
+</html>
+

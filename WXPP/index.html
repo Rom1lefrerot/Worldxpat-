@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WorldXpat - Trouve ton groupe WhatsApp à Dubaï en 30 secondes. Connecte-toi avec ta communauté d'expatriés.">
+  <title>WorldXpat - Trouve ton groupe WhatsApp à Dubaï</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header id="header" class="header">
+    <nav class="nav container">
+      <div class="nav-logo">
+        <a href="#hero" data-i18n="nav_logo">WorldXpat</a>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#nationalities" class="nav-link" data-i18n="nav_find_group">Find a group</a></li>
+        <li><a href="partners.html" class="nav-link">Services</a></li>
+        <li><a href="colocation.html" class="nav-link" data-i18n="nav_colocation">Colocation</a></li>
+        <!-- Jobs temporarily hidden
+        <li><a href="jobs.html" class="nav-link">Jobs</a></li>
+        -->
+        <li><a href="#groups" class="nav-link btn-nav-cta" data-i18n="nav_cta">Join the community</a></li>
+        <li id="languageSwitch" class="nav-link">
+          <div class="language-switcher">
+            <button type="button" class="language-option" data-language-option="en" aria-pressed="true">EN</button>
+            <button type="button" class="language-option" data-language-option="fr" aria-pressed="false">FR</button>
+          </div>
+        </li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" data-i18n-attr="aria-label:nav_toggle_label">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-background">
+      <div class="hero-gradient"></div>
+      <div class="hero-shape hero-shape-1"></div>
+      <div class="hero-shape hero-shape-2"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title hero-animate-fade-up" style="animation-delay: 120ms;" data-i18n="hero_title">
+            Find your WhatsApp group in Dubai<br>
+            <span class="text-primary">in 30 seconds.</span>
+          </h1>
+          <p class="hero-subtitle hero-animate-fade-up" style="animation-delay: 200ms;" data-i18n="hero_subtitle">
+            By nationality, by need, by interest.<br>
+            WorldXpat connects expats to the right communities without wasting time.
+          </p>
+          <div class="hero-cta hero-animate-fade-up" style="animation-delay: 300ms;">
+            <a href="#nationalities" class="btn btn-primary" data-i18n="hero_primary_cta">Choose my nationality</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-cards">
+            <div class="founder-card hero-animate-slide-in" style="animation-delay: 280ms;">
+              <div class="founder-image">
+                <img src="moi.png" alt="WorldXpat founder portrait" data-i18n-attr="alt:founder_image_alt" />
+              </div>
+              <div class="founder-info">
+                <p class="founder-label" data-i18n="founder_label">WorldXpat Crew</p>
+                <p class="founder-name" data-i18n="founder_name">Romain & the team</p>
+                <p class="founder-quote" data-i18n="founder_quote">“We create genuine connections, without useless bling.”</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Choix de nationalité -->
+  <section id="nationalities" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="nationality_section_title">1. Where are you from?</h2>
+        <p class="section-subtitle" data-i18n="nationality_section_subtitle">Tap your flag and we’ll guide you to your community.</p>
+      </div>
+      <div class="nationalities-grid" id="nationalitiesGrid">
+        <!-- Les cartes de nationalités seront générées par JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Choix du besoin -->
+  <section id="interests" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="interest_section_title">2. What do you need?</h2>
+        <p class="section-subtitle" data-i18n="interest_section_subtitle">Pick your priority and explore the WhatsApp groups made for you.</p>
+      </div>
+      <div class="interests-list" id="interestsList">
+        <!-- Les boutons d'intérêts seront générés par JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Groupes WhatsApp -->
+  <section id="groups" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="groups_section_title">Suggested WhatsApp groups</h2>
+        <p class="section-subtitle" data-i18n="groups_section_subtitle">Here’s a selection to kick-start your Dubai adventure.</p>
+      </div>
+      <div class="groups-grid" id="groupsGrid">
+        <!-- Les cartes de groupes seront générées et filtrées par JavaScript -->
+      </div>
+      <div class="groups-empty" id="groupsEmpty" style="display: none;">
+        <p id="groupsEmptyMessage" data-dynamic-i18n="groups_prompt_select">Choose your country and need to view the right groups.</p>
+        <a href="#nationalities" class="btn btn-secondary" id="groupsResetButton" data-i18n="groups_reset_filters" style="display: none;">Reset filters</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Comment ça marche -->
+  <section id="how-it-works" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="how_section_title">How does it work?</h2>
+        <p class="section-subtitle" data-i18n="how_section_subtitle">Three simple steps to find your community.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3 class="step-title" data-i18n="step1_title">Choose your nationality</h3>
+          <p class="step-text" data-i18n="step1_text">We highlight the communities that match you.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3 class="step-title" data-i18n="step2_title">Pick your need</h3>
+          <p class="step-text" data-i18n="step2_text">Housing, friends, outings, business… you decide.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3 class="step-title" data-i18n="step3_title">Join the WhatsApp group</h3>
+          <p class="step-text" data-i18n="step3_text">One tap and you’re in the right community to get started.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: À propos -->
+  <section id="about" class="section section-about-full">
+    <div class="about-hero-full">
+      <div class="about-slider" id="aboutSlider">
+        <div class="about-slide about-slide-active">
+          <img src="P1.png" alt="WorldXpat community in Dubai" class="about-image">
+        </div>
+        <div class="about-slide">
+          <img src="P5.png" alt="WorldXpat meetup in Dubai" class="about-image">
+        </div>
+        <div class="about-slide">
+          <img src="P6.png" alt="WorldXpat events in Dubai" class="about-image">
+        </div>
+        <div class="about-slide">
+          <img src="P9.png" alt="WorldXpat community moments" class="about-image">
+        </div>
+        <button class="about-slider-nav about-slider-prev" aria-label="Previous photo">‹</button>
+        <button class="about-slider-nav about-slider-next" aria-label="Next photo">›</button>
+        <div class="about-slider-dots" id="aboutSliderDots">
+          <button class="about-slider-dot about-slider-dot-active" aria-label="Go to slide 1"></button>
+          <button class="about-slider-dot" aria-label="Go to slide 2"></button>
+          <button class="about-slider-dot" aria-label="Go to slide 3"></button>
+          <button class="about-slider-dot" aria-label="Go to slide 4"></button>
+        </div>
+      </div>
+      <div class="about-hero-overlay">
+        <div class="about-hero-text">
+          <h2 class="about-hero-title" data-i18n="about_section_title">About WorldXpat</h2>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="about-content">
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <div class="highlight-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="highlight-title" data-i18n="highlight1_title">Installation à Dubaï</h3>
+            <p class="highlight-text" data-i18n="highlight1_text">Recherche de logement, premiers repères, bons plans locaux : on t'accompagne dès le premier jour.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 17H19L17 19H7L5 17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 10H17L19 12V17H5V12L7 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 10L5 7H19L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 14H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="highlight-title" data-i18n="highlight2_title">Voiture & démarches</h3>
+            <p class="highlight-text" data-i18n="highlight2_text">On t'aide à trouver une voiture, gérer les démarches administratives et le quotidien à Dubaï.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 21L12 3L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 18H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="highlight-title" data-i18n="highlight3_title">Immobilier & investissement</h3>
+            <p class="highlight-text" data-i18n="highlight3_text">Mise en relation avec les meilleurs agents immobiliers pour acheter, louer ou investir à Dubaï.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="highlight-title" data-i18n="highlight4_title">Événements & communauté</h3>
+            <p class="highlight-text" data-i18n="highlight4_text">Soirées communautaires, meetups réguliers et événements pour créer du lien et rencontrer d'autres expatriés.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: FAQ -->
+  <section id="faq" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="faq_section_title">Frequently asked questions</h2>
+        <p class="section-subtitle" data-i18n="faq_section_subtitle">Everything you need to know about WorldXpat.</p>
+      </div>
+      <div class="faq-list" id="faqList">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-i18n="faq_q1">Are the groups free?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq_a1">Yes, every WorldXpat group is free. Our goal is to connect expats—not to monetize the community.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-i18n="faq_q2">How do I join a WorldXpat event?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq_a2">Events are announced inside the official WorldXpat WhatsApp groups. Join the group for your nationality or need and you’ll get every update.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-i18n="faq_q4">Is WorldXpat only for Dubai?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq_a4">For now we focus on Dubai, but expansion is on the roadmap. Want to launch WorldXpat in your city? Reach out.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-i18n="faq_q5">How can I contribute to the community?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq_a5">Be active in the groups, welcome newcomers, share your best tips. You can also host an event or launch a new group if a need isn’t covered yet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3 class="footer-logo">WorldXpat</h3>
+          <p class="footer-tagline" data-i18n="footer_tagline">Connecting expats in Dubai and beyond.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://instagram.com/worldxpat_dubai" target="_blank" rel="noopener" class="footer-link" data-i18n="footer_instagram">Instagram</a>
+          <a href="#" class="footer-link" data-i18n="footer_whatsapp">WhatsApp Community</a>
+          <a href="https://www.tiktok.com/@worldXpat4" target="_blank" rel="noopener" class="footer-link" data-i18n="footer_tiktok">TikTok</a>
+          <a href="mailto:romain@worldxpat.com" class="footer-link" data-i18n="footer_email">Email</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer_bottom">&copy; 2024 WorldXpat. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find your colocation in Dubai - Connect with roommates and find shared accommodation in Dubai through WorldXpat">
+  <title>Colocation à Dubaï - WorldXpat</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="colocation.css">
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header id="header" class="header">
+    <nav class="nav container">
+      <div class="nav-logo">
+        <a href="index.html" data-i18n="nav_logo">WorldXpat</a>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#nationalities" class="nav-link" data-i18n="nav_find_group">Find a group</a></li>
+        <li><a href="partners.html" class="nav-link">Services</a></li>
+        <!-- Jobs temporarily hidden
+        <li><a href="jobs.html" class="nav-link">Jobs</a></li>
+        -->
+        <li><a href="colocation.html" class="nav-link active" data-i18n="nav_colocation">Colocation</a></li>
+        <li><a href="index.html#groups" class="nav-link btn-nav-cta" data-i18n="nav_cta">Join the community</a></li>
+        <li id="languageSwitch" class="nav-link">
+          <div class="language-switcher">
+            <button type="button" class="language-option" data-language-option="en" aria-pressed="true">EN</button>
+            <button type="button" class="language-option" data-language-option="fr" aria-pressed="false">FR</button>
+          </div>
+        </li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" data-i18n-attr="aria-label:nav_toggle_label">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Colocation Hero Section -->
+  <section class="colocation-hero">
+    <div class="container">
+      <div class="colocation-hero-content">
+        <h1 class="colocation-hero-title" data-i18n="colocation_hero_title">Find your Colocation in Dubai</h1>
+        <p class="colocation-hero-subtitle" data-i18n="colocation_hero_subtitle">Connect with expats looking for roommates. Share accommodation, share experiences, build your Dubai community.</p>
+        <button class="btn btn-hero-cta" id="createProfileBtn" data-i18n="colocation_create_profile">Create your Profile</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters Section -->
+  <section class="colocation-filters-section">
+    <div class="container">
+      <div class="colocation-filters">
+        <div class="filter-group">
+          <label for="filterBudgetMin" data-i18n="colocation_budget_min">Budget Min (AED)</label>
+          <input type="number" id="filterBudgetMin" class="filter-input" placeholder="Min" min="0">
+        </div>
+        <div class="filter-group">
+          <label for="filterBudgetMax" data-i18n="colocation_budget_max">Budget Max (AED)</label>
+          <input type="number" id="filterBudgetMax" class="filter-input" placeholder="Max" min="0">
+        </div>
+        <div class="filter-group filter-group-districts">
+          <label for="filterDistrictsToggle" data-i18n="colocation_districts">Districts</label>
+          <div class="districts-dropdown">
+            <button type="button" class="districts-dropdown-toggle" id="filterDistrictsToggle">
+              <span class="districts-selected-text" id="filterDistrictsText" data-i18n="colocation_all_districts">All Districts</span>
+              <span class="districts-arrow">▼</span>
+            </button>
+            <div class="districts-dropdown-content" id="filterDistricts">
+              <div class="districts-checkboxes">
+                <label class="checkbox-label">
+                  <input type="checkbox" value="Marina" class="district-checkbox">
+                  <span>Marina</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" value="JVC" class="district-checkbox">
+                  <span>JVC</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" value="Business Bay" class="district-checkbox">
+                  <span>Business Bay</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" value="Deira" class="district-checkbox">
+                  <span>Deira</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" value="Downtown" class="district-checkbox">
+                  <span>Downtown</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" value="JLT" class="district-checkbox">
+                  <span>JLT</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" value="Dubai Hills" class="district-checkbox">
+                  <span>Dubai Hills</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" value="Palm Jumeirah" class="district-checkbox">
+                  <span>Palm Jumeirah</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" value="Dubai Marina" class="district-checkbox">
+                  <span>Dubai Marina</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" value="Al Barsha" class="district-checkbox">
+                  <span>Al Barsha</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label for="filterGender" data-i18n="colocation_gender_preference">Gender Preference</label>
+          <select id="filterGender" class="filter-select">
+            <option value="" data-i18n="colocation_gender_any">Any</option>
+            <option value="Male" data-i18n="colocation_gender_male">Male</option>
+            <option value="Female" data-i18n="colocation_gender_female">Female</option>
+            <option value="Mixed" data-i18n="colocation_gender_mixed">Mixed</option>
+          </select>
+        </div>
+        <div class="filter-group filter-group-nationality">
+          <label for="filterNationalityToggle" data-i18n="colocation_nationality">Nationality</label>
+          <div class="nationality-dropdown">
+            <button type="button" class="nationality-dropdown-toggle" id="filterNationalityToggle">
+              <span class="nationality-selected-text" id="filterNationalityText" data-i18n="colocation_all_nationalities">All Nationalities</span>
+              <span class="nationality-arrow">▼</span>
+            </button>
+            <div class="nationality-dropdown-content" id="filterNationality">
+              <div class="nationality-search-container">
+                <input type="text" class="nationality-search" id="nationalitySearchInput" data-i18n-placeholder="colocation_search_nationality" placeholder="Search nationality...">
+              </div>
+              <div class="nationality-list" id="nationalityList">
+                <!-- Options will be populated dynamically by JavaScript -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="filter-group filter-actions">
+          <button id="filterBtn" class="btn-filter" data-i18n="colocation_filter">Filter</button>
+          <button id="clearFiltersBtn" class="btn-clear" data-i18n="colocation_clear">Clear</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Colocation Cards Section -->
+  <section class="colocation-section">
+    <div class="container">
+      <div class="colocation-grid" id="colocationCards">
+        <!-- Cards will be generated by JavaScript -->
+      </div>
+      <div class="colocation-empty" id="colocationEmpty" style="display: none;">
+        <div class="empty-state-content">
+          <div class="empty-icon">🏠</div>
+          <h3 data-i18n="colocation_no_profiles">No colocation profiles found</h3>
+          <p data-i18n="colocation_no_profiles_text">Try adjusting your filters or create your own profile to get started.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Message -->
+  <div class="success-message" id="successMessage" style="display: none;">
+    <span class="success-text">✅ Profile created successfully!</span>
+  </div>
+
+  <!-- Modal: Create Profile -->
+  <div class="modal-overlay" id="profileModal" style="display: none;">
+    <div class="modal-content modal-content-large">
+      <div class="modal-header">
+        <h2 class="modal-title" data-i18n="colocation_modal_title">Create your Roommate Profile</h2>
+        <button class="modal-close" id="closeModal">&times;</button>
+      </div>
+      <form id="profileForm" class="modal-form">
+        <!-- Photo Upload -->
+        <div class="form-group">
+          <label for="profilePhoto" data-i18n="colocation_form_photo">Photo *</label>
+          <div class="photo-upload-container">
+            <input type="file" id="profilePhoto" class="photo-input" accept="image/*" required>
+            <div class="photo-preview-container" id="photoPreviewContainer" style="display: none;">
+              <img id="photoPreview" class="photo-preview" alt="Photo preview">
+              <button type="button" class="photo-remove" id="removePhoto">×</button>
+            </div>
+            <label for="profilePhoto" class="photo-upload-label" id="photoUploadLabel">
+              <span class="photo-upload-icon">📷</span>
+              <span class="photo-upload-text">Click to upload your photo</span>
+              <span class="photo-upload-hint">JPG, PNG (max 5MB)</span>
+            </label>
+          </div>
+          <small class="form-hint" data-i18n="colocation_form_photo_hint">Your profile photo is required and will be visible to others. You'll be able to crop it after selection.</small>
+        </div>
+        
+        <!-- Photo Crop Modal -->
+        <div class="modal-overlay" id="photoCropModal" style="display: none;">
+          <div class="modal-content modal-content-crop">
+            <div class="modal-header">
+              <h2 class="modal-title" id="cropModalTitle" data-i18n="colocation_photo_ready">Photo ready ✅</h2>
+              <button class="modal-close" id="closeCropModal">&times;</button>
+            </div>
+            
+            <!-- Preview Mode (default) -->
+            <div class="crop-preview-mode" id="cropPreviewMode">
+              <div class="crop-preview-container">
+                <img id="cropPreview" class="crop-preview-image" alt="Photo preview">
+              </div>
+              <div class="crop-preview-actions">
+                <button type="button" class="btn btn-adjust" id="adjustCropBtn" data-i18n="colocation_photo_adjust">✏️ Adjust</button>
+                <button type="button" class="btn btn-submit" id="usePhotoBtn" data-i18n="colocation_photo_use">✅ Use this photo</button>
+              </div>
+            </div>
+            
+            <!-- Adjust Mode (optional) -->
+            <div class="crop-adjust-mode" id="cropAdjustMode" style="display: none;">
+              <div class="crop-adjust-hint">
+                <p data-i18n="colocation_photo_hint">Drag to center your face. Use the slider to zoom.</p>
+              </div>
+              <div class="crop-area" id="cropArea">
+                <img id="cropImage" alt="Crop image">
+                <div class="crop-center-guide"></div>
+              </div>
+              <div class="crop-controls">
+                <div class="crop-zoom-control">
+                  <label data-i18n="colocation_photo_zoom">Zoom:</label>
+                  <input type="range" id="cropZoom" min="1" max="3" step="0.1" value="1">
+                </div>
+                <div class="crop-actions">
+                  <button type="button" class="btn btn-cancel" id="cancelAdjustBtn" data-i18n="colocation_form_cancel">Cancel</button>
+                  <button type="button" class="btn btn-submit" id="saveAdjustBtn" data-i18n="colocation_photo_save">✅ Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Information -->
+        <div class="form-row">
+          <div class="form-group form-group-half">
+            <label for="profileFirstName" data-i18n="colocation_form_first_name">First Name *</label>
+            <input type="text" id="profileFirstName" class="form-input" required placeholder="Your first name" maxlength="50">
+          </div>
+          <div class="form-group form-group-half">
+          <label for="profileAge" data-i18n="colocation_form_age">Age *</label>
+          <input type="number" id="profileAge" class="form-input" required placeholder="Your age" min="18" max="100">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="profileNationality" data-i18n="colocation_form_nationality">Nationality *</label>
+          <select id="profileNationality" class="form-select" required>
+            <option value="" data-i18n="colocation_form_nationality_select">Select your nationality</option>
+            <!-- Options will be populated dynamically by JavaScript -->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="profileLanguages" data-i18n="colocation_form_languages">Languages *</label>
+          <div class="languages-input-container">
+            <input type="text" id="profileLanguages" class="form-input" placeholder="e.g., English, French, Arabic" required>
+            <small class="form-hint" data-i18n="colocation_form_languages_hint">Separate languages with commas (e.g., English, French, Arabic)</small>
+          </div>
+        </div>
+
+        <!-- Budget and Location -->
+        <div class="form-group">
+          <label for="profileBudget" data-i18n="colocation_form_budget">Monthly Budget (AED) *</label>
+          <input type="number" id="profileBudget" class="form-input" required placeholder="e.g. 3500" min="500" step="100">
+        </div>
+
+        <div class="form-group">
+          <label for="profileDistrictsToggle" data-i18n="colocation_form_districts">Preferred Districts *</label>
+          <div class="districts-dropdown">
+            <button type="button" class="districts-dropdown-toggle" id="profileDistrictsToggle">
+              <span class="districts-selected-text" id="profileDistrictsText" data-i18n="colocation_form_districts_select">Select districts</span>
+              <span class="districts-arrow">▼</span>
+            </button>
+            <div class="districts-dropdown-content" id="profileDistricts">
+              <div class="districts-checkboxes">
+                <label class="checkbox-label">
+                  <input type="checkbox" value="Marina" class="district-checkbox" name="profileDistricts">
+                  <span>Marina</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" value="JVC" class="district-checkbox" name="profileDistricts">
+                  <span>JVC</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" value="Business Bay" class="district-checkbox" name="profileDistricts">
+                  <span>Business Bay</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" value="Deira" class="district-checkbox" name="profileDistricts">
+                  <span>Deira</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" value="Downtown" class="district-checkbox" name="profileDistricts">
+                  <span>Downtown</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" value="JLT" class="district-checkbox" name="profileDistricts">
+                  <span>JLT</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" value="Dubai Hills" class="district-checkbox" name="profileDistricts">
+                  <span>Dubai Hills</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" value="Palm Jumeirah" class="district-checkbox" name="profileDistricts">
+                  <span>Palm Jumeirah</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" value="Dubai Marina" class="district-checkbox" name="profileDistricts">
+                  <span>Dubai Marina</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" value="Al Barsha" class="district-checkbox" name="profileDistricts">
+                  <span>Al Barsha</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <small class="form-hint" data-i18n="colocation_form_districts_hint">Select one or more districts</small>
+        </div>
+
+        <!-- Availability -->
+        <div class="form-group">
+          <label for="profileAvailabilityDate" data-i18n="colocation_form_availability">Availability / Arrival Date *</label>
+          <input type="date" id="profileAvailabilityDate" class="form-input" required>
+          <small class="form-hint" data-i18n="colocation_form_availability_hint">When are you available to move in?</small>
+        </div>
+
+        <!-- Gender Preference -->
+        <div class="form-group">
+          <label for="profileGender" data-i18n="colocation_form_gender">Gender Preference *</label>
+          <select id="profileGender" class="form-select" required>
+            <option value="" data-i18n="colocation_form_gender_select">Select preference</option>
+            <option value="Mixed">Mixed</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+          <label for="profileDescription" data-i18n="colocation_form_description">About my search *</label>
+          <textarea id="profileDescription" class="form-textarea" required data-i18n-placeholder="colocation_form_description_placeholder" placeholder="Tell us about yourself and what you're looking for in a roommate or accommodation. Be specific and detailed." rows="5" minlength="80" maxlength="500"></textarea>
+          <small class="form-hint" style="display: block; margin-top: 4px; color: var(--color-gray-600);" data-i18n="colocation_form_description_hint">Minimum 80 characters, maximum 500</small>
+          <div class="char-counter">
+            <span id="charCount">0</span> / 500 characters
+          </div>
+          <div id="descriptionError" class="form-error-message" style="display: none;"></div>
+        </div>
+
+        <!-- WhatsApp -->
+        <div class="form-group">
+          <label for="profileWhatsApp" data-i18n="colocation_form_whatsapp">WhatsApp Number *</label>
+          <input type="tel" id="profileWhatsApp" class="form-input" required placeholder="+971501234567" pattern="[+]?[0-9\s\-]+">
+          <small class="form-hint" data-i18n="colocation_form_whatsapp_hint">Include country code (e.g., +971 for UAE, +33 for France)</small>
+        </div>
+
+        <!-- Form Actions -->
+        <div class="modal-actions">
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span class="btn-text" data-i18n="colocation_form_submit">Submit Profile</span>
+            <span class="btn-loading" style="display: none;" data-i18n="colocation_form_submitting">Submitting...</span>
+          </button>
+          <button type="button" class="btn-cancel" id="cancelBtn" data-i18n="colocation_form_cancel">Cancel</button>
+        </div>
+
+        <!-- Success Message -->
+        <div class="form-success-message" id="formSuccessMessage" style="display: none;">
+          <div class="success-icon">✅</div>
+          <div class="success-content">
+            <h3 data-i18n="colocation_form_success_title">Profile submitted — under review by WorldXpat</h3>
+            <p data-i18n="colocation_form_success_text">Your profile will be visible once approved by our team. We'll review it within 24-48 hours.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Profile Details (Read More) -->
+  <div class="modal-overlay" id="profileDetailsModal" style="display: none;">
+    <div class="modal-content modal-content-large">
+      <div class="modal-header">
+        <h2 class="modal-title" data-i18n="colocation_profile_details">Profile Details</h2>
+        <button class="modal-close" id="closeDetailsModal">&times;</button>
+      </div>
+      <div class="profile-details-content" id="profileDetailsContent">
+        <!-- Content will be populated by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3 class="footer-logo">WorldXpat</h3>
+          <p class="footer-tagline" data-i18n="footer_tagline">Connecting expats in Dubai and beyond.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://instagram.com/worldxpat_dubai" target="_blank" rel="noopener" class="footer-link" data-i18n="footer_instagram">Instagram</a>
+          <a href="#" class="footer-link" data-i18n="footer_whatsapp">WhatsApp Community</a>
+          <a href="https://www.tiktok.com/@worldXpat4" target="_blank" rel="noopener" class="footer-link" data-i18n="footer_tiktok">TikTok</a>
+          <a href="mailto:romain@worldxpat.com" class="footer-link" data-i18n="footer_email">Email</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer_bottom">&copy; 2024 WorldXpat. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = 'https://qkqdbxerbaskmgarxwak.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFrcWRieGVyYmFza21nYXJ4d2FrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUwMjc5NzEsImV4cCI6MjA4MDYwMzk3MX0.1eC8ZmlH7f0vPr5q_V8BNKRNnueLLhnD0RjQTG2klhU';
+    window.supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    console.log('Supabase client initialized:', !!window.supabaseClient);
+  </script>
+  <script src="script.js"></script>
+  <script src="colocation.js"></script>
+</body>
+</html>
+
+
