@@ -8,221 +8,94 @@ console.log('events.js loaded');
 // DATA - ÉVÉNEMENTS PAR NATIONALITÉ
 // ============================================
 
+// Événements globaux qui s'affichent pour toutes les nationalités
+const GLOBAL_EVENTS = [
+  {
+    id: 'newcomers-meeting-2026',
+    titleKey: 'event_newcomers_meeting_2026_title',
+    descriptionKey: 'event_newcomers_meeting_2026_desc',
+    type: 'Soirée Newcomers',
+    date: '2026-02-03',
+    time: '19:00',
+    location: 'Dubai',
+    image: 'meeting.png',
+  },
+];
+
 const EVENTS_BY_NATIONALITY = {
   FR: [
     {
-      id: 'fr-newcomers-1',
-      titleKey: 'event_fr_newcomers_title',
-      descriptionKey: 'event_fr_newcomers_desc',
-      type: 'Soirée Newcomers',
-      date: '2025-01-18',
-      time: '20:00',
-      location: 'JLT',
-    },
-    {
-      id: 'fr-boat-1',
-      titleKey: 'event_fr_boat_title',
-      descriptionKey: 'event_fr_boat_desc',
-      type: 'Soirée Boat Party',
-      date: '2025-01-25',
-      time: '16:00',
-      location: 'Dubai Marina',
-    },
-    {
-      id: 'fr-dating-1',
-      titleKey: 'event_fr_dating_title',
-      descriptionKey: 'event_fr_dating_desc',
-      type: 'Soirée Dating',
-      date: '2025-01-20',
-      time: '20:30',
-      location: 'Downtown',
-    },
-    {
-      id: 'fr-quiz-1',
-      titleKey: 'event_fr_quiz_title',
-      descriptionKey: 'event_fr_quiz_desc',
-      type: 'Soirée Quiz',
-      date: '2025-01-22',
-      time: '19:00',
-      location: 'Business Bay',
-    },
-    {
-      id: 'fr-sport-1',
-      titleKey: 'event_fr_sport_title',
-      descriptionKey: 'event_fr_sport_desc',
+      id: 'fr-ireland-1',
+      titleKey: 'event_fr_ireland_title',
+      descriptionKey: 'event_fr_ireland_desc',
       type: 'Soirée Sportive',
-      date: '2025-01-17',
-      time: '18:00',
-      location: 'Dubai Hills',
+      date: '2025-02-05',
+      time: '00:10',
+      location: 'Dubai',
+      image: 'c.png',
     },
   ],
   GB: [
     {
-      id: 'gb-meetup-1',
-      titleKey: 'event_gb_meetup_title',
-      descriptionKey: 'event_gb_meetup_desc',
-      type: 'Soirée Rencontre',
-      date: '2025-01-16',
-      time: '20:00',
-      location: 'Business Bay',
-    },
-    {
-      id: 'gb-newcomers-1',
-      titleKey: 'event_gb_newcomers_title',
-      descriptionKey: 'event_gb_newcomers_desc',
-      type: 'Soirée Newcomers',
-      date: '2025-01-19',
-      time: '19:30',
-      location: 'JBR',
-    },
-    {
-      id: 'gb-boat-1',
-      titleKey: 'event_gb_boat_title',
-      descriptionKey: 'event_gb_boat_desc',
-      type: 'Soirée Boat Party',
-      date: '2025-01-26',
-      time: '15:00',
-      location: 'Dubai Marina',
-    },
-    {
-      id: 'gb-dating-1',
-      titleKey: 'event_gb_dating_title',
-      descriptionKey: 'event_gb_dating_desc',
-      type: 'Soirée Dating',
-      date: '2025-01-21',
-      time: '20:00',
-      location: 'Downtown',
-    },
-    {
-      id: 'gb-quiz-1',
-      titleKey: 'event_gb_quiz_title',
-      descriptionKey: 'event_gb_quiz_desc',
-      type: 'Soirée Quiz',
-      date: '2025-01-23',
-      time: '19:00',
-      location: 'JBR',
-    },
-    {
-      id: 'gb-sport-1',
-      titleKey: 'event_gb_sport_title',
-      descriptionKey: 'event_gb_sport_desc',
+      id: 'gb-wales-1',
+      titleKey: 'event_gb_wales_title',
+      descriptionKey: 'event_gb_wales_desc',
       type: 'Soirée Sportive',
-      date: '2025-01-18',
-      time: '18:30',
-      location: 'Dubai Hills',
+      date: '2025-02-07',
+      time: '20:40',
+      location: 'Dubai',
+      image: 'ccc.png',
     },
   ],
   IE: [
     {
-      id: 'ie-meetup-1',
-      titleKey: 'event_ie_meetup_title',
-      descriptionKey: 'event_ie_meetup_desc',
-      type: 'Soirée Rencontre',
-      date: '2025-01-17',
-      time: '19:30',
-      location: 'JBR',
-    },
-    {
-      id: 'ie-newcomers-1',
-      titleKey: 'event_ie_newcomers_title',
-      descriptionKey: 'event_ie_newcomers_desc',
-      type: 'Soirée Newcomers',
-      date: '2025-01-20',
-      time: '20:00',
-      location: 'Business Bay',
-    },
-    {
-      id: 'ie-boat-1',
-      titleKey: 'event_ie_boat_title',
-      descriptionKey: 'event_ie_boat_desc',
-      type: 'Soirée Boat Party',
-      date: '2025-01-27',
-      time: '16:00',
-      location: 'Dubai Marina',
-    },
-    {
-      id: 'ie-dating-1',
-      titleKey: 'event_ie_dating_title',
-      descriptionKey: 'event_ie_dating_desc',
-      type: 'Soirée Dating',
-      date: '2025-01-22',
-      time: '20:30',
-      location: 'Downtown',
-    },
-    {
-      id: 'ie-quiz-1',
-      titleKey: 'event_ie_quiz_title',
-      descriptionKey: 'event_ie_quiz_desc',
-      type: 'Soirée Quiz',
-      date: '2025-01-24',
-      time: '19:00',
-      location: 'JBR',
-    },
-    {
-      id: 'ie-sport-1',
-      titleKey: 'event_ie_sport_title',
-      descriptionKey: 'event_ie_sport_desc',
+      id: 'ie-france-1',
+      titleKey: 'event_fr_ireland_title',
+      descriptionKey: 'event_fr_ireland_desc',
       type: 'Soirée Sportive',
-      date: '2025-01-19',
-      time: '18:00',
-      location: 'Dubai Hills',
+      date: '2025-02-05',
+      time: '00:10',
+      location: 'Dubai',
+      image: 'c.png',
     },
   ],
   MA: [
+ 
+  ],
+  IT: [
     {
-      id: 'ma-meetup-1',
-      titleKey: 'event_ma_meetup_title',
-      descriptionKey: 'event_ma_meetup_desc',
-      type: 'Soirée Rencontre',
-      date: '2025-01-18',
-      time: '21:00',
-      location: 'Downtown',
-    },
-    {
-      id: 'ma-newcomers-1',
-      titleKey: 'event_ma_newcomers_title',
-      descriptionKey: 'event_ma_newcomers_desc',
-      type: 'Soirée Newcomers',
-      date: '2025-01-21',
-      time: '20:30',
-      location: 'Dubai Marina',
-    },
-    {
-      id: 'ma-boat-1',
-      titleKey: 'event_ma_boat_title',
-      descriptionKey: 'event_ma_boat_desc',
-      type: 'Soirée Boat Party',
-      date: '2025-01-28',
-      time: '17:00',
-      location: 'Dubai Marina',
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
-    },
-    {
-      id: 'ma-dating-1',
-      titleKey: 'event_ma_dating_title',
-      descriptionKey: 'event_ma_dating_desc',
-      type: 'Soirée Dating',
-      date: '2025-01-23',
-      time: '21:00',
-      location: 'JLT',
-    },
-    {
-      id: 'ma-quiz-1',
-      titleKey: 'event_ma_quiz_title',
-      descriptionKey: 'event_ma_quiz_desc',
-      type: 'Soirée Quiz',
-      date: '2025-01-25',
-      time: '20:00',
-      location: 'Business Bay',
-    },
-    {
-      id: 'ma-sport-1',
-      titleKey: 'event_ma_sport_title',
-      descriptionKey: 'event_ma_sport_desc',
+      id: 'it-scotland-1',
+      titleKey: 'event_it_scotland_title',
+      descriptionKey: 'event_it_scotland_desc',
       type: 'Soirée Sportive',
-      date: '2025-01-20',
-      time: '19:00',
-      location: 'Dubai Hills',
+      date: '2025-02-07',
+      time: '18:10',
+      location: 'Dubai',
+      image: 'cc.png',
+    },
+  ],
+  SC: [
+    {
+      id: 'sc-italy-1',
+      titleKey: 'event_it_scotland_title',
+      descriptionKey: 'event_it_scotland_desc',
+      type: 'Soirée Sportive',
+      date: '2025-02-07',
+      time: '18:10',
+      location: 'Dubai',
+      image: 'cc.png',
+    },
+  ],
+  WL: [
+    {
+      id: 'wl-england-1',
+      titleKey: 'event_gb_wales_title',
+      descriptionKey: 'event_gb_wales_desc',
+      type: 'Soirée Sportive',
+      date: '2025-02-07',
+      time: '20:40',
+      location: 'Dubai',
+      image: 'ccc.png',
     },
   ],
 };
@@ -235,6 +108,7 @@ const EVENT_TYPE_ICONS = {
   'Soirée Dating': '💕',
   'Soirée Quiz': '🧠',
   'Soirée Sportive': '⚽',
+  'Soirée Brunch': '🥐',
 };
 
 // Mapping des types d'événements vers les clés de traduction
@@ -245,6 +119,26 @@ const EVENT_TYPE_TRANSLATION_KEYS = {
   'Soirée Dating': 'event_type_dating',
   'Soirée Quiz': 'event_type_quiz',
   'Soirée Sportive': 'event_type_sport',
+  'Soirée Brunch': 'event_type_brunch',
+};
+
+// Mapping des types d'événements vers les catégories
+const EVENT_TYPE_CATEGORIES = {
+  'Soirée Rencontre': 'meetup',
+  'Soirée Newcomers': 'meetup',
+  'Soirée Boat Party': 'party',
+  'Soirée Dating': 'party',
+  'Soirée Quiz': 'party',
+  'Soirée Sportive': 'sport',
+  'Soirée Brunch': 'brunch',
+};
+
+// Catégories disponibles
+const EVENT_CATEGORIES = {
+  meetup: { en: 'Meetup', fr: 'Rencontre' },
+  party: { en: 'Party', fr: 'Soirée' },
+  brunch: { en: 'Brunch', fr: 'Brunch' },
+  sport: { en: 'Sport', fr: 'Sport' },
 };
 
 // URLs WhatsApp pour les groupes d'événements par nationalité
@@ -253,6 +147,9 @@ const WHATSAPP_EVENTS_URLS = {
   GB: 'https://chat.whatsapp.com/LkEAT5AlWC8DUfXUHzp0n4',
   IE: 'https://chat.whatsapp.com/Iu8eYqO4M01C5RR4B2uo3L',
   MA: 'https://chat.whatsapp.com/HsU2cvFUCytD0wsPbBLOXV', // Groupe events marocain
+  IT: 'https://chat.whatsapp.com/BiL3Sc0pAhB9u6Bd5yGpt8', // À remplacer par le vrai lien
+  SC: 'https://chat.whatsapp.com/BiL3Sc0pAhB9u6Bd5yGpt8', // À remplacer par le vrai lien
+  WL: 'https://chat.whatsapp.com/LkEAT5AlWC8DUfXUHzp0n4', // À remplacer par le vrai lien
 };
 
 // Images par type d'événement (utilisant Unsplash pour de belles images)
@@ -263,6 +160,7 @@ const EVENT_TYPE_IMAGES = {
   'Soirée Dating': 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&h=600&fit=crop',
   'Soirée Quiz': 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
   'Soirée Sportive': 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&h=600&fit=crop',
+  'Soirée Brunch': 'https://images.unsplash.com/photo-1525351484163-752a5b8e0e0e?w=800&h=600&fit=crop',
 };
 
 // Mapping des nationalités avec leurs noms
@@ -271,6 +169,9 @@ const NATIONALITY_NAMES = {
   GB: 'British',
   IE: 'Irish',
   MA: 'Moroccan',
+  IT: 'Italian',
+  SC: 'Scottish',
+  WL: 'Welsh',
 };
 
 // ============================================
@@ -278,6 +179,7 @@ const NATIONALITY_NAMES = {
 // ============================================
 
 const nationalitySelect = document.getElementById('nationalitySelect');
+const categorySelect = document.getElementById('categorySelect');
 const eventsContainer = document.getElementById('eventsContainer');
 const eventsEmpty = document.getElementById('eventsEmpty');
 
@@ -329,7 +231,8 @@ function getEventTypeTranslated(type) {
  * Obtient l'URL WhatsApp pour une nationalité
  */
 function getWhatsAppUrl(nationality) {
-  return WHATSAPP_EVENTS_URLS[nationality] || WHATSAPP_EVENTS_URLS.FR;
+  // Tous les événements redirigent vers le même groupe WhatsApp
+  return 'https://chat.whatsapp.com/BfuDNywd3K6LZ1MRppiikN';
 }
 
 /**
@@ -362,6 +265,10 @@ function getEventTypeFallbackImage(event) {
  * Obtient le nom de la nationalité
  */
 function getNationalityName(code) {
+  if (code === 'ALL') {
+    // Pour les événements globaux, utiliser la traduction
+    return window.t ? window.t('events_all_nationalities') : 'All nationalities';
+  }
   return NATIONALITY_NAMES[code] || code;
 }
 
@@ -370,21 +277,38 @@ function getNationalityName(code) {
 // ============================================
 
 /**
- * Affiche les événements filtrés par nationalité
+ * Obtient la catégorie d'un événement
  */
-function renderEvents(selectedNationality = '') {
+function getEventCategory(eventType) {
+  return EVENT_TYPE_CATEGORIES[eventType] || null;
+}
+
+/**
+ * Affiche les événements filtrés par nationalité et catégorie
+ */
+function renderEvents(selectedNationality = '', selectedCategory = '') {
   if (!eventsContainer) return;
 
   eventsContainer.innerHTML = '';
 
   let eventsToShow = [];
 
+  // Toujours ajouter les événements globaux
+  GLOBAL_EVENTS.forEach(event => {
+    eventsToShow.push({
+      ...event,
+      nationality: 'ALL', // Marquer comme événement global
+    });
+  });
+
   if (selectedNationality && EVENTS_BY_NATIONALITY[selectedNationality]) {
     // Afficher les événements de la nationalité sélectionnée
-    eventsToShow = EVENTS_BY_NATIONALITY[selectedNationality].map(event => ({
-      ...event,
-      nationality: selectedNationality,
-    }));
+    EVENTS_BY_NATIONALITY[selectedNationality].forEach(event => {
+      eventsToShow.push({
+        ...event,
+        nationality: selectedNationality,
+      });
+    });
   } else if (!selectedNationality) {
     // Afficher tous les événements de toutes les nationalités
     Object.keys(EVENTS_BY_NATIONALITY).forEach(nationality => {
@@ -394,6 +318,14 @@ function renderEvents(selectedNationality = '') {
           nationality,
         });
       });
+    });
+  }
+
+  // Filtrer par catégorie si une catégorie est sélectionnée
+  if (selectedCategory) {
+    eventsToShow = eventsToShow.filter(event => {
+      const eventCategory = getEventCategory(event.type);
+      return eventCategory === selectedCategory;
     });
   }
 
@@ -468,35 +400,68 @@ function renderEvents(selectedNationality = '') {
 // ============================================
 
 /**
+ * Fonction pour mettre à jour les options traduites des sélecteurs
+ */
+function updateSelectOptions() {
+  if (window.t) {
+    // Mettre à jour l'option "Toutes les nationalités"
+    const allNationalityOption = nationalitySelect?.querySelector('option[value=""]');
+    if (allNationalityOption) {
+      allNationalityOption.textContent = window.t('events_all_nationalities');
+    }
+    
+    // Mettre à jour l'option "Toutes les catégories"
+    const allCategoryOption = categorySelect?.querySelector('option[value=""]');
+    if (allCategoryOption) {
+      allCategoryOption.textContent = window.t('events_all_categories');
+    }
+    
+    // Mettre à jour les options de catégories
+    if (categorySelect) {
+      const categoryOptions = categorySelect.querySelectorAll('option[value]');
+      categoryOptions.forEach(option => {
+        const categoryValue = option.value;
+        if (categoryValue && EVENT_CATEGORIES[categoryValue]) {
+          const currentLang = window.currentLanguage || 'en';
+          option.textContent = EVENT_CATEGORIES[categoryValue][currentLang] || EVENT_CATEGORIES[categoryValue].en;
+        }
+      });
+    }
+  }
+}
+
+/**
+ * Fonction pour appliquer les filtres
+ */
+function applyFilters() {
+  const selectedNationality = nationalitySelect?.value || '';
+  const selectedCategory = categorySelect?.value || '';
+  renderEvents(selectedNationality, selectedCategory);
+}
+
+/**
  * Initialise la page des événements
  */
 function initEventsPage() {
   // Écouter les changements de sélection de nationalité
   if (nationalitySelect) {
-    nationalitySelect.addEventListener('change', (e) => {
-      const selectedNationality = e.target.value;
-      renderEvents(selectedNationality);
-    });
-    
-    // Mettre à jour l'option "Toutes les nationalités" lors du changement de langue
-    const updateSelectOption = () => {
-      const allOption = nationalitySelect.querySelector('option[value=""]');
-      if (allOption && window.t) {
-        allOption.textContent = window.t('events_all_nationalities');
-      }
-    };
-    
-    // Mettre à jour au chargement
-    updateSelectOption();
-    
-    // Écouter les changements de langue pour mettre à jour les cartes
-    window.addEventListener('languageChanged', () => {
-      updateSelectOption();
-      // Re-rendre les événements pour mettre à jour les traductions
-      const selectedNationality = nationalitySelect.value || '';
-      renderEvents(selectedNationality);
-    });
+    nationalitySelect.addEventListener('change', applyFilters);
   }
+  
+  // Écouter les changements de sélection de catégorie
+  if (categorySelect) {
+    categorySelect.addEventListener('change', applyFilters);
+  }
+  
+  // Mettre à jour les options traduites au chargement
+  updateSelectOptions();
+  
+  // Écouter les changements de langue pour mettre à jour les cartes et les options
+  window.addEventListener('languageChanged', () => {
+    updateSelectOptions();
+    // Re-rendre les événements pour mettre à jour les traductions
+    applyFilters();
+  });
 
   // Afficher tous les événements au chargement initial
   renderEvents();
