@@ -4,7 +4,7 @@
 
 .events-hero-section {
   padding: calc(70px + var(--spacing-4xl)) 0 var(--spacing-4xl);
-  background: url('étoile.png');
+  background: url('cool.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -25,9 +25,9 @@
   bottom: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.15) 0%,
-    rgba(0, 0, 0, 0.05) 50%,
-    rgba(0, 0, 0, 0.15) 100%
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.35) 100%
   );
   pointer-events: none;
   z-index: 0;
@@ -36,29 +36,55 @@
 .events-hero-section .container {
   position: relative;
   z-index: 1;
-  max-width: 800px;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 var(--spacing-lg);
+  box-sizing: border-box;
 }
 
 .events-hero-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
   font-weight: 300;
   color: #ffffff;
-  margin: 0 0 var(--spacing-lg) 0;
-  letter-spacing: 0.02em;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  margin: 0 auto var(--spacing-md);
+  letter-spacing: 0.08em;
+  text-shadow: 
+    0 2px 20px rgba(0, 0, 0, 0.8),
+    0 4px 40px rgba(0, 0, 0, 0.6),
+    0 1px 3px rgba(0, 0, 0, 0.5);
   line-height: 1.2;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  text-transform: uppercase;
+  position: relative;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  white-space: nowrap;
+  text-align: center;
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .events-hero-subtitle {
   font-size: clamp(1rem, 2vw, 1.25rem);
-  color: rgba(255, 255, 255, 0.95);
-  max-width: 600px;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 650px;
   margin: 0 auto;
   line-height: 1.7;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 
+    0 1px 15px rgba(0, 0, 0, 0.7),
+    0 2px 25px rgba(0, 0, 0, 0.5),
+    0 1px 3px rgba(0, 0, 0, 0.4);
   font-weight: 300;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
+  padding: 0 var(--spacing-md);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ============================================
@@ -72,9 +98,21 @@
 }
 
 .events-filter-container {
-  max-width: 500px;
+  max-width: 900px;
   margin: 0 auto;
   text-align: center;
+}
+
+.events-filter-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+  align-items: end;
+}
+
+.events-filter-item {
+  display: flex;
+  flex-direction: column;
 }
 
 .events-filter-label {
@@ -184,20 +222,7 @@
 
 /* Type Badge - Minimaliste */
 .event-card-type-badge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  padding: 0.5rem 1rem;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 8px;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--color-gray-900);
-  letter-spacing: 0.02em;
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  display: none;
 }
 
 /* Nationality Badge */
@@ -336,6 +361,11 @@
     padding: 0 var(--spacing-md);
   }
 
+  .events-filter-row {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
   .events-list-section {
     padding: var(--spacing-2xl) 0;
   }
@@ -368,10 +398,9 @@
     height: 180px;
   }
 
-  .event-card-type-badge,
   .event-card-nationality-badge {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.75rem;
+    font-size: 0.7rem;
+    padding: 0.35rem 0.7rem;
   }
 
   .event-detail-item {
