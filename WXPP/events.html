@@ -44,18 +44,35 @@
     </div>
   </section>
 
-  <!-- Nationality Selector -->
+  <!-- Filters Section -->
   <section class="events-filter-section">
     <div class="container">
       <div class="events-filter-container">
-        <label for="nationalitySelect" class="events-filter-label" data-i18n="events_select_nationality">Sélectionnez votre nationalité</label>
-        <select id="nationalitySelect" class="events-nationality-select">
-          <option value="" data-i18n="events_all_nationalities">Toutes les nationalités</option>
-          <option value="FR">🇫🇷 Francophones</option>
-          <option value="GB">🇬🇧 British</option>
-          <option value="IE">🇮🇪 Irish</option>
-          <option value="MA">🇲🇦 Moroccan</option>
-        </select>
+        <div class="events-filter-row">
+          <div class="events-filter-item">
+            <label for="nationalitySelect" class="events-filter-label" data-i18n="events_select_nationality">Sélectionnez votre nationalité</label>
+            <select id="nationalitySelect" class="events-nationality-select">
+              <option value="" data-i18n="events_all_nationalities">Toutes les nationalités</option>
+              <option value="FR">🇫🇷 Francophones</option>
+              <option value="GB">🇬🇧 British</option>
+              <option value="IE">🇮🇪 Irish</option>
+              <option value="MA">🇲🇦 Moroccan</option>
+              <option value="IT">🇮🇹 Italian</option>
+              <option value="SC">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scottish</option>
+              <option value="WL">🏴󠁧󠁢󠁷󠁬󠁳󠁿 Welsh</option>
+            </select>
+          </div>
+          <div class="events-filter-item">
+            <label for="categorySelect" class="events-filter-label" data-i18n="events_select_category">Sélectionnez une catégorie</label>
+            <select id="categorySelect" class="events-nationality-select">
+              <option value="" data-i18n="events_all_categories">Toutes les catégories</option>
+              <option value="meetup" data-i18n="category_meetup">Meetup</option>
+              <option value="party" data-i18n="category_party">Party</option>
+              <option value="brunch" data-i18n="category_brunch">Brunch</option>
+              <option value="sport" data-i18n="category_sport">Sport</option>
+            </select>
+          </div>
+        </div>
       </div>
     </div>
   </section>
